@@ -291,3 +291,100 @@ Received Import Request.
 Start importing Assets/Model Assets/Scrap Collection systems/Scrap collector 1.fbx using Guid(8218cbd21446cde4d8df2e55fb70e6cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c575de21d300e86fd51509e6d83fec7') in 0.032334 seconds 
   Import took 0.044050 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 6962.486482 seconds.
+  path: Assets/Model Assets/Factory Assets
+  artifactKey: Guid(c3bbac07279a2a54b9321b08eede73fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Factory Assets using Guid(c3bbac07279a2a54b9321b08eede73fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '842abc41024f722d377b5ad7c5187bbe') in 0.008069 seconds 
+  Import took 0.148777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.747369 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes
+  artifactKey: Guid(015b3f001a72cbe46bc4fa8cab718a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes using Guid(015b3f001a72cbe46bc4fa8cab718a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49efe732783c73cf065e14a0c47c9385') in 0.005696 seconds 
+  Import took 0.010324 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001537 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes
+  artifactKey: Guid(015b3f001a72cbe46bc4fa8cab718a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes using Guid(015b3f001a72cbe46bc4fa8cab718a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49efe732783c73cf065e14a0c47c9385') in 0.002384 seconds 
+  Import took 0.007225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.951752 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/box1.fbx
+  artifactKey: Guid(1ca66c9cc8edc4f44ba48d7ddd12862b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/box1.fbx using Guid(1ca66c9cc8edc4f44ba48d7ddd12862b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '194f696c601efce9b0f246cab902ea5a') in 0.087978 seconds 
+  Import took 0.092151 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/box2.fbx
+  artifactKey: Guid(a13b415f64b3c1343a67b4b00c8b6931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/box2.fbx using Guid(a13b415f64b3c1343a67b4b00c8b6931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '759cfadaefa2fad300cdf1451fb7b7c4') in 0.068582 seconds 
+  Import took 0.072557 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/box3.fbx
+  artifactKey: Guid(09366d50c602a0d46b0a369c0d9ca5bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/box3.fbx using Guid(09366d50c602a0d46b0a369c0d9ca5bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a04e7196bee2a0662541ca94409814') in 0.025833 seconds 
+  Import took 0.029798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.878316 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/box robot 1.png
+  artifactKey: Guid(7799e2c09b5dcb744b807adf5c242a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/box robot 1.png using Guid(7799e2c09b5dcb744b807adf5c242a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6d512fe39c22c782324535b07889eb9') in 0.025684 seconds 
+  Import took 0.036377 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000363 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/box1.fbx
+  artifactKey: Guid(1ca66c9cc8edc4f44ba48d7ddd12862b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/box1.fbx using Guid(1ca66c9cc8edc4f44ba48d7ddd12862b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64149b5f7e74d39f498b40246083b8c3') in 0.049254 seconds 
+  Import took 0.053367 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/box2.fbx
+  artifactKey: Guid(a13b415f64b3c1343a67b4b00c8b6931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/box2.fbx using Guid(a13b415f64b3c1343a67b4b00c8b6931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc35deaa5bbda20730f7bfb476eac5a') in 0.046239 seconds 
+  Import took 0.077134 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/Box robot 2.png
+  artifactKey: Guid(21ce9d3b07c3ecb478fb22e2e627430e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/Box robot 2.png using Guid(21ce9d3b07c3ecb478fb22e2e627430e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '971d500c5b1a3542b2fa99858486a54e') in 0.011469 seconds 
+  Import took 0.015121 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/box robot 3.png
+  artifactKey: Guid(08f3bcd4eddea3749a704e074781d836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/box robot 3.png using Guid(08f3bcd4eddea3749a704e074781d836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4465674729f2cd295499637af6031842') in 0.010830 seconds 
+  Import took 0.014658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Model Assets/Trucks/Truck Boxes/box3.fbx
+  artifactKey: Guid(09366d50c602a0d46b0a369c0d9ca5bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model Assets/Trucks/Truck Boxes/box3.fbx using Guid(09366d50c602a0d46b0a369c0d9ca5bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c168812e09417e41aa90e25dfcc7f9af') in 0.034360 seconds 
+  Import took 0.059381 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
