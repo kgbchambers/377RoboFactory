@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HelloWorld.unity
     guid: 1e8ce379e38042f4b967a32a4f0d4024
   m_configObjects: {}
