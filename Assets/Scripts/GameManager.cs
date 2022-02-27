@@ -83,9 +83,7 @@ public class GameManager : Singleton<GameManager>
 
     IEnumerator AutoSave()
     {
-        Debug.Log("Starting Autosave");
-        yield return new WaitForSeconds(5f);
-        Debug.Log("5 seconds later saving");
+        yield return new WaitForSeconds(20f);
         SaveGame();
     }
 
