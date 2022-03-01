@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class conveyorscript : MonoBehaviour
+public class beltscript : MonoBehaviour
 {
     public float speed;
     Rigidbody rBody;
