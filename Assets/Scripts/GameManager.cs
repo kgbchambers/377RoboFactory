@@ -45,7 +45,6 @@ public class GameManager : Singleton<GameManager>
             IncrementScrap();
             UpdateUI();
             timer -= 1f;
-            StartCoroutine(AutoSave());
         }
     }
 
@@ -53,11 +52,12 @@ public class GameManager : Singleton<GameManager>
 
     public void ProduceRobot()
     {
-        producedCount++;
-        scrapCount -= 10f;
-        UpdateUI();
-        
-
+        if(scrapCount >= 10)
+        {
+            producedCount++;
+            scrapCount -= 10f;
+            UpdateUI();
+        }
         //get reference to Fabricator Object
         //spawn robo part 1 and add to list
         //apply force to push onto conveyor from spawn
@@ -77,14 +77,6 @@ public class GameManager : Singleton<GameManager>
     {
         scrapCountText.text = "Scrap: " + scrapCount;
         countText.text = "Robots Produced: " + producedCount;
-    }
-
-
-
-    IEnumerator AutoSave()
-    {
-        yield return new WaitForSeconds(20f);
-        SaveGame();
     }
 
 
