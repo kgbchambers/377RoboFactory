@@ -2041,7 +2041,7 @@ GameObject:
   - component: {fileID: 7764542260325461315}
   m_Layer: 0
   m_Name: RobotTorso1
-  m_TagString: Untagged
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2054,8 +2054,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5839138121496492152}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0.0069136615, y: 0, z: -0.0069134077}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0.0048801, y: -0.037295, z: -0.0069134}
+  m_LocalScale: {x: 0.035293, y: 0.035293, z: 0.035293}
   m_Children:
   - {fileID: 8823382382941817585}
   - {fileID: 7940619175484996007}

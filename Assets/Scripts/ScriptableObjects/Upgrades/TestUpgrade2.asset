@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e641ad76a511348b28b9795e528d63, type: 3}
   m_Name: TestUpgrade2
   m_EditorClassIdentifier: 
-  Name: Leg Suspension
-  modifier: 1.1
-  Add: 0
-  multiply: 1
+  name: Fabricator Boost
+  modifier: 2
+  cost: 1500
+  isModifyingConveyorSpeed: 0
+  isModifyingFabricatorPower: 1
+  isModifyingCash: 0
+  isModifyingScrap: 0

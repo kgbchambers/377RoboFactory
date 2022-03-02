@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e641ad76a511348b28b9795e528d63, type: 3}
   m_Name: TestUpgrade1
   m_EditorClassIdentifier: 
-  Name: Stronger Alloy
-  modifier: 0.1
-  Add: 1
-  multiply: 0
+  name: Conveyor Belt
+  modifier: 1.5
+  cost: 1000
+  isModifyingConveyorSpeed: 1
+  isModifyingFabricatorPower: 0
+  isModifyingCash: 0
+  isModifyingScrap: 0
+  isSECOND_MODIFIER: 0
+  alsoConveyorSpeed: 0
+  alsoFabricatorPower: 0
+  alsoCash: 0
+  alsoScrap: 0

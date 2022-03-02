@@ -5,28 +5,35 @@ using UnityEngine;
 public class Fabricator : MonoBehaviour
 {
     private Transform spawnLocation;
-    public bool isSpawn;
+
+    [Range(1,3)]
+    public int processNumber;
+
+    //change to read in list of all robots and manage ScriptableObjects (Robots)
     public Robot robotToProduce;
+
+
     public float spawnPower;
 
-    private Rigidbody rb;
+
+    private Rigidbody othersRB;
     private Collider inputCollider;
 
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
-        if (!isSpawn)
+        if (processNumber == 1)
             inputCollider = GetComponent<BoxCollider>();
 
     }
 
     public void buildRobot()
     {
-        if (isSpawn)
+        if (processNumber == 1)
         {
             GameObject part = Instantiate(robotToProduce.legs, spawnLocation);
-            rb = part.GetComponent<Rigidbody>();
-            rb.AddForce(transform.right * spawnPower);
+            othersRB = part.GetComponent<Rigidbody>();
+            othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
         }
     }
 
@@ -35,11 +42,20 @@ public class Fabricator : MonoBehaviour
     {
         if(other.tag == "Robot")
         {
-            Destroy(other.gameObject);
-            GameObject part = Instantiate(robotToProduce.chassisLegs, spawnLocation);
-            rb = part.GetComponent<Rigidbody>();
-            rb.AddForce(transform.right * spawnPower);
+            if (processNumber == 2)
+            {
+                Destroy(other.gameObject);
+                GameObject part = Instantiate(robotToProduce.chassisLegs, spawnLocation);
+                othersRB = part.GetComponent<Rigidbody>();
+                othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
+            }
+            if (processNumber == 3)
+            {
+                Destroy(other.gameObject);
+                GameObject part = Instantiate(robotToProduce.fullRobot, spawnLocation);
+                othersRB = part.GetComponent<Rigidbody>();
+                othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
+            }
         }
     }
-
 }

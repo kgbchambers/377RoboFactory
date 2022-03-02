@@ -7,5 +7,6 @@ public class PlayerData
 {
     public float producedCount;
     public float scrapCount;
+    public float cashCount;
     public float saveTime;
 }

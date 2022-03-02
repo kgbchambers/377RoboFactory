@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e641ad76a511348b28b9795e528d63, type: 3}
   m_Name: TestUpgrade3
   m_EditorClassIdentifier: 
-  Name: Computerized Chip
-  modifier: 0.5
-  Add: 1
-  multiply: 1
+  name: Scrapper Bonus
+  modifier: 5
+  cost: 500
+  isModifyingConveyorSpeed: 0
+  isModifyingFabricatorPower: 0
+  isModifyingCash: 0
+  isModifyingScrap: 1
+  isSECOND_MODIFIER: 1
+  alsoConveyorSpeed: 0
+  alsoFabricatorPower: 0
+  alsoCash: 1
+  alsoScrap: 0

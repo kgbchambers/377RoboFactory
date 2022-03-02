@@ -16,11 +16,17 @@ public class GameManager : Singleton<GameManager>
 
     public TextMeshProUGUI countText;
     public TextMeshProUGUI scrapCountText;
+    public TextMeshProUGUI cashCountText;
 
+    private PlayerData save;
     private float producedCount;
     private float scrapCount;
+    private float cashCount;
+    private float saveTime;
     private float loadTime;
-    private float scrapAddBonus;
+
+    private float scrapModifier;
+    private float cashModifier;
 
     //private List<Parts> roboParts;
 
@@ -30,10 +36,9 @@ public class GameManager : Singleton<GameManager>
     {
         touchControls = new PlayerInput();
         touchControls.Enable();
-
-        producedCount = 0;
-        scrapAddBonus = 0;
-        LoadGame();
+        save = SaveManager.instance.LoadGame();
+        ReloadData(save);
+        UpdateUI();
     }
 
 
@@ -52,7 +57,7 @@ public class GameManager : Singleton<GameManager>
 
     public void ProduceRobot()
     {
-        if(scrapCount >= 10)
+        if (scrapCount >= 10)
         {
             producedCount++;
             scrapCount -= 10f;
@@ -68,7 +73,13 @@ public class GameManager : Singleton<GameManager>
 
     private void IncrementScrap()
     {
-        scrapCount += scrapAddBonus + 1f;
+        scrapCount += 1 + scrapModifier * 1.0f;
+    }
+
+
+    public void addCash()
+    {
+        cashCount += 100.0f + cashModifier;
     }
 
 
@@ -77,74 +88,35 @@ public class GameManager : Singleton<GameManager>
     {
         scrapCountText.text = "Scrap: " + scrapCount;
         countText.text = "Robots Produced: " + producedCount;
+        cashCountText.text = "Cash: " + cashCount;
+
     }
 
 
-
-    private PlayerData CreateSaveGameObject()
+    private void ReloadData(PlayerData save)
     {
-        PlayerData save = new PlayerData();
+        producedCount = save.producedCount;
+        scrapCount = save.scrapCount;
+        cashCount = save.cashCount;
+        loadTime = save.saveTime;
+        int loadResources = (int)loadTime - (int)Time.time;
+        producedCount += loadResources;
+    }
 
+    private void SaveData(PlayerData save)
+    {
         save.producedCount = producedCount;
         save.scrapCount = scrapCount;
+        save.cashCount = cashCount;
         save.saveTime = Time.time;
- 
-        return save;
-    }
-
-
-
-    public void SaveGame()
-    {
-        //create a save instance with all the data for the current session save into it
-        PlayerData save = CreateSaveGameObject();
-
-        //create a binary formatter and filestream passing a path for the save instance to be save to.
-        //It will serialize the data (into bytes) and write to the disk and close the filestream.
-        //There will then be a file name gamesave.save on the players computer - Note that we can use whatever we want
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
-        bf.Serialize(file, save);
-
-        //reset the game state
-        Debug.Log("Game Saved");
-    }
-
-
-
-    public void LoadGame()
-    {
-        //Check to see that the save file exists. If it does, clear the robots and score.
-        //Otherwise, log to the console that there is no save game.
-
-        if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
-        {
-
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
-            PlayerData save = (PlayerData)bf.Deserialize(file);
-            file.Close();
-
-            producedCount = save.producedCount;
-            scrapCount = save.scrapCount;
-            loadTime = save.saveTime;
-            int loadResources = (int)loadTime - (int)Time.time;
-            producedCount += loadResources;
-
-            Debug.Log("Game Loaded");
-        }
-        else
-        {
-            Debug.Log("No Game Save");
-        }
-        UpdateUI();
+        SaveManager.instance.SaveGame(save);
     }
 
 
 
     private void OnApplicationQuit()
     {
-        SaveGame();
+        SaveData(save);
     }
 
 }
