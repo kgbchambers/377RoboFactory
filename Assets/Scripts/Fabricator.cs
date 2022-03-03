@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class Fabricator : MonoBehaviour
 {
+
     private Transform spawnLocation;
 
     [Range(1,3)]
@@ -17,14 +19,10 @@ public class Fabricator : MonoBehaviour
 
 
     private Rigidbody othersRB;
-    private Collider inputCollider;
 
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
-        if (processNumber == 1)
-            inputCollider = GetComponent<BoxCollider>();
-
     }
 
     public void buildRobot()

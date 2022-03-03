@@ -17,18 +17,24 @@ public class GameManager : Singleton<GameManager>
     public TextMeshProUGUI countText;
     public TextMeshProUGUI scrapCountText;
     public TextMeshProUGUI cashCountText;
+    public TextMeshProUGUI robotCostText;
+
+
+    public List<GameObject> Fabricators;
+    public List<GameObject> Conveyors;
+
 
     private PlayerData save;
     private float producedCount;
-    private float scrapCount;
-    private float cashCount;
+    private float robotCost;
+
+
+    public float scrapCount;
+    public float cashCount;
     private float saveTime;
     private float loadTime;
-
-    private float scrapModifier;
-    private float cashModifier;
-
-    //private List<Parts> roboParts;
+    public float scrapModifier;
+    public float cashModifier;
 
 
 
@@ -36,6 +42,8 @@ public class GameManager : Singleton<GameManager>
     {
         touchControls = new PlayerInput();
         touchControls.Enable();
+        robotCost = 10f;
+        scrapCount = 10f;
         save = SaveManager.instance.LoadGame();
         ReloadData(save);
         UpdateUI();
@@ -48,19 +56,23 @@ public class GameManager : Singleton<GameManager>
         if(timer >= 1f)
         {
             IncrementScrap();
-            UpdateUI();
             timer -= 1f;
         }
     }
 
+    private void FixedUpdate()
+    {
+        UpdateUI();
+    }
 
 
     public void ProduceRobot()
     {
-        if (scrapCount >= 10)
+        if (scrapCount >= robotCost)
         {
             producedCount++;
-            scrapCount -= 10f;
+            scrapCount -= robotCost;
+            Fabricators[0].GetComponent<Fabricator>().buildRobot();
             UpdateUI();
         }
         //get reference to Fabricator Object
@@ -73,13 +85,22 @@ public class GameManager : Singleton<GameManager>
 
     private void IncrementScrap()
     {
-        scrapCount += 1 + scrapModifier * 1.0f;
+        scrapCount += 1 + scrapModifier * 2.0f;
+    }
+    
+    private void IncrementScrap(int robots)
+    {
+        scrapCount = scrapCount + (robots * (1 + scrapModifier * 2.0f));
     }
 
 
     public void addCash()
     {
-        cashCount += 100.0f + cashModifier;
+        cashCount += 10.0f + cashModifier;
+    }
+    public void addCash(int robots)
+    {
+        cashCount = cashCount + (robots * (10.0f + cashModifier));
     }
 
 
@@ -89,7 +110,7 @@ public class GameManager : Singleton<GameManager>
         scrapCountText.text = "Scrap: " + scrapCount;
         countText.text = "Robots Produced: " + producedCount;
         cashCountText.text = "Cash: " + cashCount;
-
+        robotCostText.text = "Required Scrap: " + robotCost;
     }
 
 
@@ -99,8 +120,10 @@ public class GameManager : Singleton<GameManager>
         scrapCount = save.scrapCount;
         cashCount = save.cashCount;
         loadTime = save.saveTime;
-        int loadResources = (int)loadTime - (int)Time.time;
+        int loadResources = ((int)loadTime - (int)Time.time) / 3;
         producedCount += loadResources;
+        addCash(loadResources);
+        IncrementScrap(loadResources);
     }
 
     private void SaveData(PlayerData save)
@@ -111,6 +134,57 @@ public class GameManager : Singleton<GameManager>
         save.saveTime = Time.time;
         SaveManager.instance.SaveGame(save);
     }
+
+
+
+    public void UpgradeScrap(float level, float cost)
+    {
+        if (cashCount >= cost)
+        {
+            scrapModifier = scrapModifier + level;
+            cashCount -= cost;
+        }
+    }
+    
+
+    public void UpgradeCash(float level, float cost)
+    {
+        if(cashCount >= cost)
+        {
+            cashModifier += level * 5;
+            cashCount -= cost;
+            robotCost = robotCost + (level * 2); 
+        }
+    }
+
+
+    public void UpgradeFabs(float level, float cost)
+    { 
+        if(cashCount >= cost)
+        {
+            cashCount -= cost;
+            foreach(GameObject fab in Fabricators)
+            {
+                fab.GetComponent<Fabricator>().spawnPower += level;
+            }
+        }
+    
+    }
+
+
+    public void UpgradeConveyors(float level, float cost)
+    {
+        if (cashCount >= cost)
+        {
+            cashCount -= cost;
+            foreach (GameObject conveyor in Conveyors)
+            {
+                conveyor.GetComponent<Conveyor>().speed += level;
+            }
+        }
+
+    }
+
 
 
 

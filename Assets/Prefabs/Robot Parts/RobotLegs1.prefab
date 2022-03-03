@@ -1230,6 +1230,7 @@ GameObject:
   - component: {fileID: 7221055922864697735}
   - component: {fileID: 8033727629777759034}
   - component: {fileID: 8033727629777759035}
+  - component: {fileID: 8394109627242407194}
   m_Layer: 0
   m_Name: RobotLegs1
   m_TagString: Robot
@@ -1244,9 +1245,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8033727629777759037}
-  m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.7071066}
-  m_LocalPosition: {x: 0.0024343, y: 0.1086, z: -0.0000000043394}
-  m_LocalScale: {x: 0.030586002, y: 0.030586002, z: 0.030586002}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.0024343, y: 0.137, z: -0.0000000043394}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 6375025918521932573}
   - {fileID: 93887131026073005}
@@ -1274,7 +1275,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8033727629777759037}
   serializedVersion: 2
-  m_Mass: 0.5
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1293,5 +1294,17 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0137978, y: 6.7557364, z: 1.8624852}
-  m_Center: {x: 0.055848878, y: -4.5073333, z: 0.14733775}
+  m_Size: {x: 2.0137978, y: 6.7557364, z: 1.2438817}
+  m_Center: {x: 0.055848874, y: -4.5073333, z: 0.00058270985}
+--- !u!114 &8394109627242407194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033727629777759037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66161c716c55d342a7df564e6fd84b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
