@@ -3,7 +3,27 @@ guid: ca40e607961ca3444aca0536073d5b9e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chasis
+    second: {fileID: 2100000, guid: 32199c2d3f85b8c46a662aed18b15a2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights
+    second: {fileID: 2100000, guid: 96e5ed8ecfe952f47b4bb8efabc6e596, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 7ea90008637686b49b2ce1754742b04c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire
+    second: {fileID: 2100000, guid: 77132535741140f498023daeaed23981, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
