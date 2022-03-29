@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5e641ad76a511348b28b9795e528d63, type: 3}
-  m_Name: TestUpgrade2
+  m_Name: TestUpgrade5
   m_EditorClassIdentifier: 
-  upgradeName: Robot Plating
-  tier: 2
-  modifier: 10
-  makeModifierMultiplicative: 0
-  cost: 550
+  upgradeName: Robot Aluminum Plating
+  tier: 1
+  modifier: 3
+  makeModifierMultiplicative: 1
+  cost: 2500
   isModifyingScrapCapacity: 0
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 0

@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e641ad76a511348b28b9795e528d63, type: 3}
   m_Name: TestUpgrade3
   m_EditorClassIdentifier: 
-  name: Scrapper Bonus
-  modifier: 5
+  upgradeName: Scrap Recharger
+  tier: 3
+  modifier: 2
+  makeModifierMultiplicative: 0
   cost: 500
+  isModifyingScrapCapacity: 1
+  isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 0
-  isModifyingFabricatorPower: 0
-  isModifyingCash: 0
-  isModifyingScrap: 1
-  isSECOND_MODIFIER: 1
-  alsoConveyorSpeed: 0
-  alsoFabricatorPower: 0
-  alsoCash: 1
-  alsoScrap: 0
+  isModifyingTruckCapacity: 0
+  isModifyingTruckSpeed: 0
+  isModifyingFabricatorSpeed: 0
+  isModifyingRobotValue: 0
