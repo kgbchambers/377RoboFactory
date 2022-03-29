@@ -107,7 +107,10 @@ public class GameManager : Singleton<GameManager>
         scrapCount = scrapCap;
         scrapRecharge = 5F;
 
-        //conveyorSpeed = .2f; ;
+        foreach (GameObject conveyor in GameManager.instance.Conveyors)
+        {
+            conveyor.GetComponent<Conveyor>().speed = 0.2f;
+        }
 
         truckCap = 6f;
         truckSpeed = 1f;
@@ -124,7 +127,11 @@ public class GameManager : Singleton<GameManager>
             producedCount++;
             scrapCount -= robotCost;
             UpdateUI();
-            Fabricators[0].GetComponent<Fabricator>().buildRobot();
+            foreach(GameObject fabricator in Fabricators)
+            {
+                if(fabricator.GetComponent<Fabricator>().processNumber == 1)
+                    fabricator.GetComponent<Fabricator>().buildRobot();
+            }
         }
         //get reference to Fabricator Object
         //spawn robo part 1 and add to list
