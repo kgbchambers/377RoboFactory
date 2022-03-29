@@ -14,57 +14,108 @@ public class GameManager : Singleton<GameManager>
     private float timer;
 
 
-    public TextMeshProUGUI countText;
     public TextMeshProUGUI scrapCountText;
-    public TextMeshProUGUI cashCountText;
-    public TextMeshProUGUI robotCostText;
+    public TextMeshProUGUI goldCountText;
 
 
+    //lists of in-scene Fabricators and Conveyors
     public List<GameObject> Fabricators;
     public List<GameObject> Conveyors;
 
 
+    //variables for saving and loading data
+    private float saveTime;
+    private float loadTime;
     private PlayerData save;
+
+    //current cash variable
+    public float goldCount;
+    public float scrapCount;
+
+    //variables for cost of items
     private float producedCount;
     private float robotCost;
 
+    //variables for scrap upgrades
+    public float scrapCap;
+    public float scrapRecharge;
 
-    public float scrapCount;
-    public float cashCount;
-    private float saveTime;
-    private float loadTime;
-    public float scrapModifier;
-    public float cashModifier;
+    //variables for conveyor upgrades
+    //public float conveyorSpeed;
 
+    //variables for truck upgrades
+    public float truckCap;
+    public float truckSpeed;
+
+    //variables for fabricator upgrades
+    public float fabricatorSpeed;
+
+    //variables for robot value upgrades
+    public float robotValue;
 
 
     private void Start()
     {
-        //touchControls = new PlayerInput();
-        //touchControls.Enable();
-        robotCost = 10f;
-        scrapCount = 10f;
-        save = SaveManager.instance.LoadGame();
-        ReloadData(save);
-        UpdateUI();
+        touchControls = new PlayerInput();
+        touchControls.Enable();
+        StartValues();
+        StartCoroutine(IncrementScrap());
+        StartCoroutine(StartUIUpdate());
     }
 
 
-    public void Update()
+    IEnumerator StartUIUpdate()
     {
-        timer += Time.deltaTime;
-        if(timer >= 1f)
+        while (true)
         {
-            IncrementScrap();
-            timer -= 1f;
+            UpdateUI();
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
-    private void FixedUpdate()
+
+    private void UpdateUI()
     {
-        UpdateUI();
+        scrapCountText.text = "Scrap: " + scrapCount;
+        goldCountText.text = goldCount + " Gold";
     }
 
+
+    IEnumerator IncrementScrap()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            if(scrapCap - scrapCount < scrapRecharge)
+            {
+                scrapCount = scrapCap;
+            }
+            else
+                scrapCount += scrapRecharge;
+        }
+    }
+
+
+
+    private void StartValues()
+    {
+        goldCount = 0f;
+        producedCount = 0f;
+        robotCost = 10f;
+
+        scrapCap = 100f;
+        scrapCount = scrapCap;
+        scrapRecharge = 5F;
+
+        //conveyorSpeed = .2f; ;
+
+        truckCap = 6f;
+        truckSpeed = 1f;
+
+        fabricatorSpeed = 1f;
+
+        robotValue = 25f;
+}
 
     public void ProduceRobot()
     {
@@ -72,8 +123,8 @@ public class GameManager : Singleton<GameManager>
         {
             producedCount++;
             scrapCount -= robotCost;
-            Fabricators[0].GetComponent<Fabricator>().buildRobot();
             UpdateUI();
+            Fabricators[0].GetComponent<Fabricator>().buildRobot();
         }
         //get reference to Fabricator Object
         //spawn robo part 1 and add to list
@@ -81,39 +132,26 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-
-
-    private void IncrementScrap()
-    {
-        scrapCount += 1 + scrapModifier * 2.0f;
-    }
-    
-    private void IncrementScrap(int robots)
-    {
-        scrapCount = scrapCount + (robots * (1 + scrapModifier * 2.0f));
-    }
-
-
     public void addCash()
     {
-        cashCount += 10.0f + cashModifier;
-    }
-    public void addCash(int robots)
-    {
-        cashCount = cashCount + (robots * (10.0f + cashModifier));
+        goldCount += 10.0f + robotValue;
+        UpdateUI();
     }
 
 
 
+
+
+    /*
     private void UpdateUI()
     {
         scrapCountText.text = "Scrap: " + scrapCount;
-        countText.text = "Robots Produced: " + producedCount;
+        //countText.text = "Robots Produced: " + producedCount;
         cashCountText.text = "Cash: " + cashCount;
         robotCostText.text = "Required Scrap: " + robotCost;
     }
 
-
+    
     private void ReloadData(PlayerData save)
     {
         producedCount = save.producedCount;
@@ -122,8 +160,6 @@ public class GameManager : Singleton<GameManager>
         loadTime = save.saveTime;
         int loadResources = ((int)loadTime - (int)Time.time) / 3;
         producedCount += loadResources;
-        addCash(loadResources);
-        IncrementScrap(loadResources);
     }
 
     private void SaveData(PlayerData save)
@@ -134,7 +170,7 @@ public class GameManager : Singleton<GameManager>
         save.saveTime = Time.time;
         SaveManager.instance.SaveGame(save);
     }
-
+    
 
 
     public void UpgradeScrap(float level, float cost)
@@ -184,13 +220,13 @@ public class GameManager : Singleton<GameManager>
         }
 
     }
-
+    */
 
 
 
     private void OnApplicationQuit()
     {
-        SaveData(save);
+        //SaveData(save);
     }
 
 }

@@ -35,7 +35,7 @@ public class Singleton<T> : MonoBehaviour where T : Component
             Destroy(gameObject);
         }
 
-        Debug.Log("Singletons in Scene: " + gameObject.name);
+        //Debug.Log("Singletons in Scene: " + gameObject.name);
 
     }
 }

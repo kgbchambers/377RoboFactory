@@ -8,21 +8,22 @@ public class Fabricator : MonoBehaviour
 
     private Transform spawnLocation;
 
-    [Range(1,3)]
+    [Range(1,4)]
     public int processNumber;
+    public float speed;
 
     //change to read in list of all robots and manage ScriptableObjects (Robots)
     public Robot robotToProduce;
-
-
-    public float spawnPower;
-
+    private float spawnPower;
 
     private Rigidbody othersRB;
+    private GameObject part;
 
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
+        spawnPower = 0.8f;
+        speed = 3f;
     }
 
     public void buildRobot()
@@ -38,29 +39,36 @@ public class Fabricator : MonoBehaviour
   
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Robot")
+        if (other.tag == "Robot")
         {
-            if (processNumber == 2)
-            {
-                Destroy(other.gameObject);
-                GameObject part = Instantiate(robotToProduce.part2, spawnLocation);
+            Destroy(other.gameObject);
+            StartCoroutine(FabricationDelay());
+        }
+    }
+
+
+    IEnumerator FabricationDelay()
+    {
+        yield return new WaitForSeconds(speed);
+        switch (processNumber)
+        {
+            case 2:
+                part = Instantiate(robotToProduce.part2, spawnLocation);
                 othersRB = part.GetComponent<Rigidbody>();
                 othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
-            }
-            else if (processNumber == 3)
-            {
-                Destroy(other.gameObject);
-                GameObject part = Instantiate(robotToProduce.part3, spawnLocation);
+                break;
+            case 3:
+                part = Instantiate(robotToProduce.part3, spawnLocation);
                 othersRB = part.GetComponent<Rigidbody>();
                 othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
-            }
-            else if (processNumber == 4)
-            {
-                Destroy(other.gameObject);
-                GameObject part = Instantiate(robotToProduce.part4, spawnLocation);
+                break;
+            case 4:
+                part = Instantiate(robotToProduce.part4, spawnLocation);
                 othersRB = part.GetComponent<Rigidbody>();
                 othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
-            }
+                break;
+            default:
+                break;
         }
     }
 }

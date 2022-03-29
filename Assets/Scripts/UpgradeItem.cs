@@ -8,6 +8,7 @@ public class UpgradeItem : MonoBehaviour
 {
     public Text NameText;
     public Text CostText;
+    public Text ModifierText;
     public Button upgradeButton;
     public Upgrade upgrade;
 }

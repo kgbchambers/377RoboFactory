@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Scrap Generator
   tier: 1
-  modifier: 1
+  modifier: 5
   makeModifierMultiplicative: 0
-  cost: 100
+  cost: 200
   isModifyingScrapCapacity: 0
   isModifyingScrapRecharge: 1
   isModifyingConveyorSpeed: 0

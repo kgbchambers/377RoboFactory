@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Robot Aluminum Plating
   tier: 1
-  modifier: 3
+  modifier: 1.2
   makeModifierMultiplicative: 1
-  cost: 2500
+  cost: 1000
   isModifyingScrapCapacity: 0
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 0

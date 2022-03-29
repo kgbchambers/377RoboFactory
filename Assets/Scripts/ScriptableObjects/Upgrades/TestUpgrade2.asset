@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e641ad76a511348b28b9795e528d63, type: 3}
   m_Name: TestUpgrade2
   m_EditorClassIdentifier: 
-  upgradeName: Robot Plating
-  tier: 2
-  modifier: 10
+  upgradeName: Scrap Scavenger
+  tier: 1
+  modifier: 50
   makeModifierMultiplicative: 0
-  cost: 550
-  isModifyingScrapCapacity: 0
+  cost: 250
+  isModifyingScrapCapacity: 1
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 0
   isModifyingTruckCapacity: 0
   isModifyingTruckSpeed: 0
   isModifyingFabricatorSpeed: 0
-  isModifyingRobotValue: 1
+  isModifyingRobotValue: 0

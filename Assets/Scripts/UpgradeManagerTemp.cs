@@ -7,7 +7,7 @@ using TMPro;
 
 public class UpgradeManagerTemp : Singleton<UpgradeManagerTemp>
 {
-
+    /*
     private float cashLevel = 1;
     private float scrapLevel = 1;
     private float fabLevel = 1;
@@ -24,7 +24,6 @@ public class UpgradeManagerTemp : Singleton<UpgradeManagerTemp>
     public TextMeshProUGUI conveyorText;
     
     public TextMeshProUGUI cashCostText;
-    public TextMeshProUGUI scrapCostText;
     public TextMeshProUGUI fabCostText;
     public TextMeshProUGUI conveyorCostText;
 
@@ -92,11 +91,10 @@ public class UpgradeManagerTemp : Singleton<UpgradeManagerTemp>
         cashLevelText.text = "Robot lvl: " + cashLevel;
         cashCostText.text = "-" + cashCost;
         scrapLevelText.text = "Scrap lvl: " + scrapLevel;
-        scrapCostText.text = "-" + scrapCost;
         fabLevelText.text = "Fabricator lvl: " + fabLevel;
         fabCostText.text = "-" + fabCost;
         conveyorText.text = "Conveyor lvl: " + conveyorLevel;
         conveyorCostText.text = "-" + conveyorCost;
     }
-
+    */
 }
