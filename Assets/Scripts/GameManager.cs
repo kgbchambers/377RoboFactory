@@ -40,8 +40,8 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        touchControls = new PlayerInput();
-        touchControls.Enable();
+        //touchControls = new PlayerInput();
+        //touchControls.Enable();
         robotCost = 10f;
         scrapCount = 10f;
         save = SaveManager.instance.LoadGame();
