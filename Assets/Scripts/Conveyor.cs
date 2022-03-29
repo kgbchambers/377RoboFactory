@@ -5,6 +5,7 @@ using UnityEngine;
 public class Conveyor : MonoBehaviour
 {
     public float speed;
+
     Rigidbody rBody;
     void Start()
     {
