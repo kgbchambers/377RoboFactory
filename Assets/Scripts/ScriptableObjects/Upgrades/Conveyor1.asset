@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5e641ad76a511348b28b9795e528d63, type: 3}
-  m_Name: TestUpgrade1
+  m_Name: Conveyor1
   m_EditorClassIdentifier: 
-  upgradeName: Scrap Generator
+  upgradeName: Upgraded belts
   tier: 1
-  modifier: 5
+  modifier: 0.15
   makeModifierMultiplicative: 0
-  cost: 200
+  cost: 500
   isModifyingScrapCapacity: 0
-  isModifyingScrapRecharge: 1
-  isModifyingConveyorSpeed: 0
+  isModifyingScrapRecharge: 0
+  isModifyingConveyorSpeed: 1
   isModifyingTruckCapacity: 0
   isModifyingTruckSpeed: 0
   isModifyingFabricatorSpeed: 0

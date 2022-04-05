@@ -109,7 +109,7 @@ public class GameManager : Singleton<GameManager>
 
         foreach (GameObject conveyor in GameManager.instance.Conveyors)
         {
-            conveyor.GetComponent<Conveyor>().speed = 0.2f;
+            conveyor.GetComponent<Conveyor>().speed = 0.1f;
         }
 
         truckCap = 6f;
@@ -147,6 +147,10 @@ public class GameManager : Singleton<GameManager>
 
 
 
+    public void spendCash(float cost)
+    {
+        goldCount -= cost;
+    }
 
 
     /*

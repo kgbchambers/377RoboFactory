@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class DestroyThis : MonoBehaviour
 {
-    void Start()
+    public void OnTriggerEnter(Collider other)
     {
-        Destroy(this.gameObject, 20f);
+        if (other.tag == "Robot")
+            StartCoroutine(WaitForDestroy(other.gameObject));
     }
 
+
+    IEnumerator WaitForDestroy(GameObject robo)
+    {
+        yield return new WaitForSeconds(20f);
+        Destroy(robo);
+    }
 }

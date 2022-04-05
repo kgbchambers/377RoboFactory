@@ -14,7 +14,7 @@ public class Fabricator : MonoBehaviour
 
     //change to read in list of all robots and manage ScriptableObjects (Robots)
     public Robot robotToProduce;
-    private float spawnPower;
+    public float spawnPower;
 
     private Rigidbody othersRB;
     private GameObject part;
@@ -22,7 +22,7 @@ public class Fabricator : MonoBehaviour
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
-        spawnPower = 0.8f;
+        spawnPower = 1.2f;
         speed = 3f;
     }
 
@@ -31,8 +31,9 @@ public class Fabricator : MonoBehaviour
         if (processNumber == 1)
         {
             GameObject part = Instantiate(robotToProduce.part1, spawnLocation);
+            part.transform.localScale = new Vector3(12, 12, 12);
             othersRB = part.GetComponent<Rigidbody>();
-            othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
+            othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
         }
     }
 
@@ -54,18 +55,24 @@ public class Fabricator : MonoBehaviour
         {
             case 2:
                 part = Instantiate(robotToProduce.part2, spawnLocation);
+                part.transform.localScale = new Vector3(12, 12, 12);
+
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
                 break;
             case 3:
+
                 part = Instantiate(robotToProduce.part3, spawnLocation);
+                part.transform.localScale = new Vector3(12, 12, 12);
+
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
                 break;
             case 4:
                 part = Instantiate(robotToProduce.part4, spawnLocation);
+                part.transform.localScale = new Vector3(12, 12, 12);
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(transform.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
                 break;
             default:
                 break;

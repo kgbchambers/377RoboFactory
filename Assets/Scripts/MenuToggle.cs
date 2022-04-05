@@ -9,6 +9,7 @@ public class MenuToggle : MonoBehaviour
     public GameObject upgradeMenu;
     public GameObject openMenuButton;
     
+
     public void ToggleMenuOn()
     {
         upgradeMenu.SetActive(true);
