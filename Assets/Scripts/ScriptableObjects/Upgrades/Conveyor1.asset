@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Upgraded belts
   tier: 1
-  modifier: 0.15
-  makeModifierMultiplicative: 0
-  cost: 500
+  modifier: 1.1
+  makeModifierMultiplicative: 1
+  cost: 750
   isModifyingScrapCapacity: 0
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 1

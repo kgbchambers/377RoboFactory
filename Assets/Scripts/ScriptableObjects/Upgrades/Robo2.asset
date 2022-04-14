@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e641ad76a511348b28b9795e528d63, type: 3}
   m_Name: Robo2
   m_EditorClassIdentifier: 
-  upgradeName: Robot Aluminum Plating
+  upgradeName: Titanium Plating
   tier: 1
-  modifier: 1.2
+  modifier: 1.5
   makeModifierMultiplicative: 1
-  cost: 1000
+  cost: 10000
   isModifyingScrapCapacity: 0
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 0

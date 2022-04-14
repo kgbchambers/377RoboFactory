@@ -104,7 +104,7 @@ public class GameManager : Singleton<GameManager>
         robotCost = 10f;
 
         scrapCap = 100f;
-        scrapCount = scrapCap;
+        scrapCount = 20f;
         scrapRecharge = 5F;
 
         foreach (GameObject conveyor in GameManager.instance.Conveyors)
@@ -147,9 +147,15 @@ public class GameManager : Singleton<GameManager>
 
 
 
-    public void spendCash(float cost)
+    public bool spendCash(float cost)
     {
-        goldCount -= cost;
+        if (cost <= goldCount)
+        {
+            goldCount -= cost;
+            return true;
+        }
+        else
+            return false;
     }
 
 
