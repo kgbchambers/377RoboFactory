@@ -51,6 +51,8 @@ public class UpgradeInventoryCreator : MonoBehaviour
                     modName = " truck speed";
                 else if (upgradeItem.upgrade.isModifyingFabricatorSpeed)
                     modName = " fabricator speed";
+                else if(upgradeItem.upgrade.isModifyingRobotValue)
+                    modName = " Robots value";
 
                 upgradeItem.ModifierText.text = op + upgradeItem.upgrade.modifier + modName;
                 }
@@ -64,8 +66,6 @@ public class UpgradeInventoryCreator : MonoBehaviour
         yield return new WaitForEndOfFrame();
         foreach (Upgrade upgrade in UpgradeManager.instance.upgrades)
         {
-            if (upgradeCount < 4)
-            {
                 GameObject instance = Instantiate(ButtonPref, ButtonContainer);
                 instance.name = upgrade.name;
                 UpgradeItem upgradeItem = instance.GetComponent<UpgradeItem>();
@@ -81,43 +81,46 @@ public class UpgradeInventoryCreator : MonoBehaviour
                 if (upgradeItem.upgrade.isModifyingScrapCapacity)
                 {
                     modName = " scrap capacity";
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeScrapCap(op, upgrade.modifier); });
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeScrapCap(op, upgrade.modifier, upgrade.cost); });
                 }
                 else if (upgradeItem.upgrade.isModifyingScrapRecharge)
                 {
                     modName = " scrap recharge";
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeScrapRecharge(op, upgrade.modifier); });
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeScrapRecharge(op, upgrade.modifier, upgrade.cost); });
                 }
                 else if (upgradeItem.upgrade.isModifyingConveyorSpeed)
                 {
                     modName = " conveyor speed";
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeConveyorSpeed(op, upgrade.modifier); });
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeConveyorSpeed(op, upgrade.modifier, upgrade.cost); });
 
                 }
                 else if (upgradeItem.upgrade.isModifyingTruckCapacity)
                 {
                     modName = " truck capacity";
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeTruckCap(op, upgrade.modifier); });
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeTruckCap(op, upgrade.modifier, upgrade.cost); });
 
                 }
 
                 else if (upgradeItem.upgrade.isModifyingTruckSpeed)
                 {
                     modName = " truck speed";
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeTruckSpeed(op, upgrade.modifier); });
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeTruckSpeed(op, upgrade.modifier, upgrade.cost); });
 
                 }
 
                 else if (upgradeItem.upgrade.isModifyingFabricatorSpeed)
                 {
                     modName = " fabricator speed";
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeRobotValue(op, upgrade.modifier); });
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeRobotValue(op, upgrade.modifier, upgrade.cost); });
+                }
+                else if (upgradeItem.upgrade.isModifyingRobotValue)
+                {
+                    modName = " Robots value";
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeRobotValue(op, upgrade.modifier, upgrade.cost); });
                 }
 
-
                 upgradeItem.ModifierText.text = op + upgradeItem.upgrade.modifier + modName;
-            }
-            upgradeCount++;
+                upgradeCount++;
         }   
     }
 }
