@@ -3,7 +3,32 @@ guid: 8f760d61dee88924ba68935740647eec
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chasis
+    second: {fileID: 2100000, guid: 57504c3f01f6a4d4680b185d1afc6482, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chasis 4
+    second: {fileID: 2100000, guid: 5d1c95e309865914385ce34c02695062, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light
+    second: {fileID: 2100000, guid: ba16e0b05cb09ea44baa6b364ea5cd21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: c34cc2c89a05122409686bf004479a4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_01
+    second: {fileID: 2100000, guid: 14312df062864144ba5a133c5d101742, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
