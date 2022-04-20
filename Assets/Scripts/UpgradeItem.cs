@@ -6,9 +6,9 @@ using TMPro;
 
 public class UpgradeItem : MonoBehaviour
 {
-    public Text NameText;
-    public Text CostText;
-    public Text ModifierText;
+    public TMP_Text NameText;
+    public TMP_Text CostText;
+    public TMP_Text ModifierText;
     public Button upgradeButton;
     public Upgrade upgrade;
 }
