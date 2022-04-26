@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: ScrapCap1
   m_EditorClassIdentifier: 
   upgradeName: Scrap Bins
-  tier: 1
-  modifier: 1.5
-  makeModifierMultiplicative: 1
-  cost: 250
+  tierMod1: 20
+  tierMod2: 50
+  tierMod3: 75
+  tierMod4: 150
+  tierMod5: 200
+  tierMod6: 250
+  tierMod7: 350
+  tierMod8: 450
+  tierMod9: 600
+  makeModifierMultiplicative: 0
+  cost: 750
+  modifier: 30
   isModifyingScrapCapacity: 1
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 0

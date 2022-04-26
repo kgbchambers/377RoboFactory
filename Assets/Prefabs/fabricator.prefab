@@ -4858,7 +4858,7 @@ GameObject:
   - component: {fileID: 474754074}
   m_Layer: 0
   m_Name: fabricator
-  m_TagString: Untagged
+  m_TagString: Fabricator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4941,6 +4941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   processNumber: 1
+  speed: 0
   robotToProduce: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
   spawnPower: 1
 --- !u!65 &474754074

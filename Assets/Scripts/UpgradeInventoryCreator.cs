@@ -21,47 +21,6 @@ public class UpgradeInventoryCreator : MonoBehaviour
     }
 
 
-    IEnumerator UpdateInventory()
-    {
-        yield return new WaitForEndOfFrame();
-        foreach (Upgrade upgrade in UpgradeManager.instance.upgrades)
-        {
-            if(upgradeCount < 4)
-            {
-                GameObject instance = Instantiate(ButtonPref, ButtonContainer);
-                instance.name = upgrade.name;
-                UpgradeItem upgradeItem = instance.GetComponent<UpgradeItem>();
-                upgradeItem.upgrade = upgrade;
-                upgradeItem.NameText.text = "" + upgrade.upgradeName;
-                upgradeItem.CostText.text = "" + upgrade.cost + " Gold";
-
-                if (upgradeItem.upgrade.makeModifierMultiplicative)
-                    op = "x ";
-                else
-                    op = "+ ";
-
-                if (upgradeItem.upgrade.isModifyingScrapCapacity)
-                    modName = " scrap capacity";
-                else if (upgradeItem.upgrade.isModifyingScrapRecharge)
-                    modName = " scrap recharge";
-                else if (upgradeItem.upgrade.isModifyingConveyorSpeed)
-                    modName = " conveyor speed";
-                else if (upgradeItem.upgrade.isModifyingTruckCapacity)
-                    modName = " truck capacity";
-                else if (upgradeItem.upgrade.isModifyingTruckSpeed)
-                    modName = " truck speed";
-                else if (upgradeItem.upgrade.isModifyingFabricatorSpeed)
-                    modName = " fabricator speed";
-                else if(upgradeItem.upgrade.isModifyingRobotValue)
-                    modName = " Robots value";
-
-                upgradeItem.ModifierText.text = op + upgradeItem.upgrade.modifier + modName;
-                }
-                upgradeCount++;
-            }
-        }
-
-
     IEnumerator CreateInventory()
     {
         yield return new WaitForEndOfFrame();
@@ -73,6 +32,7 @@ public class UpgradeInventoryCreator : MonoBehaviour
                 upgradeItem.upgrade = upgrade;
                 upgradeItem.NameText.text = "" + upgrade.upgradeName;
                 upgradeItem.CostText.text = "" + upgrade.cost + " Gold";
+                upgradeItem.tier = 0;
 
                 if (upgradeItem.upgrade.makeModifierMultiplicative)
                     op = "x ";

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3165578207439807914}
   m_Layer: 0
   m_Name: belt2
-  m_TagString: Untagged
+  m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,6 +81,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  isRotated: 0
+  isNegativeRotated: 0
 --- !u!1 &3702031702290668822
 GameObject:
   m_ObjectHideFlags: 0

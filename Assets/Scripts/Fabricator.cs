@@ -23,7 +23,7 @@ public class Fabricator : MonoBehaviour
     {
         spawnLocation = transform.Find("RobotSpawner");
         spawnPower = 1.2f;
-        speed = 3f;
+        speed = 1f;
     }
 
     public void buildRobot()
@@ -50,7 +50,7 @@ public class Fabricator : MonoBehaviour
 
     IEnumerator FabricationDelay()
     {
-        yield return new WaitForSeconds(speed);
+        yield return new WaitForSeconds(10f/speed);
         switch (processNumber)
         {
             case 2:

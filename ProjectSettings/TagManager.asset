@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Robot
+  - Conveyor
+  - Fabricator
+  - Truck
   layers:
   - Default
   - TransparentFX

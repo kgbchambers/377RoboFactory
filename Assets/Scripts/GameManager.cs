@@ -13,9 +13,10 @@ public class GameManager : Singleton<GameManager>
     private PlayerInput touchControls;
     private float timer;
 
-
     public TextMeshProUGUI scrapCountText;
     public TextMeshProUGUI goldCountText;
+
+    private int factoryTier;
 
 
     //lists of in-scene Fabricators and Conveyors
@@ -41,7 +42,7 @@ public class GameManager : Singleton<GameManager>
     public float scrapRecharge;
 
     //variables for conveyor upgrades
-    //public float conveyorSpeed;
+    public float conveyorSpeed;
 
     //variables for truck upgrades
     public float truckCap;
@@ -59,6 +60,10 @@ public class GameManager : Singleton<GameManager>
         touchControls = new PlayerInput();
         touchControls.Enable();
         StartValues();
+        if (PlayerPrefs.HasKey("SaveCheck"))
+        {
+            LoadData();
+        }
         StartCoroutine(IncrementScrap());
         StartCoroutine(StartUIUpdate());
     }
@@ -69,6 +74,7 @@ public class GameManager : Singleton<GameManager>
         while (true)
         {
             UpdateUI();
+            SaveData();
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -76,8 +82,8 @@ public class GameManager : Singleton<GameManager>
 
     private void UpdateUI()
     {
-        scrapCountText.text = "Scrap: " + scrapCount;
-        goldCountText.text = goldCount + " Gold";
+        scrapCountText.text = "Scrap: " + (int) scrapCount;
+        goldCountText.text = (int) goldCount + " Gold";
     }
 
 
@@ -141,7 +147,7 @@ public class GameManager : Singleton<GameManager>
 
     public void addCash()
     {
-        goldCount += 10.0f + robotValue;
+        goldCount += 5 + robotValue;
         UpdateUI();
     }
 
@@ -159,91 +165,58 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    /*
-    private void UpdateUI()
+
+    private void LoadData()
     {
-        scrapCountText.text = "Scrap: " + scrapCount;
-        //countText.text = "Robots Produced: " + producedCount;
-        cashCountText.text = "Cash: " + cashCount;
-        robotCostText.text = "Required Scrap: " + robotCost;
+        scrapCap = PlayerPrefs.GetFloat("scrapCap");
+        scrapRecharge = PlayerPrefs.GetFloat("scrapRecharge");
+        goldCount = PlayerPrefs.GetFloat("goldCount");
+        saveTime = PlayerPrefs.GetFloat("saveTime");
+        factoryTier = PlayerPrefs.GetInt("factoryTier");
+        conveyorSpeed = PlayerPrefs.GetFloat("conveyorSpeed");
+        fabricatorSpeed = PlayerPrefs.GetFloat("fabricatorSpeed");
+        robotValue = PlayerPrefs.GetFloat("robotValue");
+        loadTime = Time.time;
+        int loadResources = (int)loadTime - (int)saveTime;
+        if (loadResources > 20f)
+            goldCount = (loadResources - 20f) * robotValue;
     }
 
-    
-    private void ReloadData(PlayerData save)
-    {
-        producedCount = save.producedCount;
-        scrapCount = save.scrapCount;
-        cashCount = save.cashCount;
-        loadTime = save.saveTime;
-        int loadResources = ((int)loadTime - (int)Time.time) / 3;
-        producedCount += loadResources;
-    }
 
-    private void SaveData(PlayerData save)
+    private void SaveData()
     {
-        save.producedCount = producedCount;
+        /*
+    public float scrapCount;
+    public float gold;
+    public float saveTime;
+    public float factoryTier;
+    public float conveyorTier;
+    public float fabricatorTier;
+    public float robotTier;
+    public float scrapCapTier;
+    public float scrapRechargeTier;
         save.scrapCount = scrapCount;
         save.cashCount = cashCount;
         save.saveTime = Time.time;
         SaveManager.instance.SaveGame(save);
+        */
+        PlayerPrefs.SetInt("SaveCheck", 1);
+        PlayerPrefs.SetFloat("scrapCap", scrapCap);
+        PlayerPrefs.SetFloat("scrapRecharge", scrapRecharge);
+        PlayerPrefs.SetFloat("goldCount", goldCount);
+        PlayerPrefs.SetFloat("saveTime", saveTime);
+        PlayerPrefs.SetInt("factoryTier", factoryTier);
+        PlayerPrefs.SetFloat("conveyorSpeed", conveyorSpeed);
+        PlayerPrefs.SetFloat("fabricatorSpeed", fabricatorSpeed);
+        PlayerPrefs.SetFloat("robotValue", robotValue);
+        PlayerPrefs.Save();
     }
     
-
-
-    public void UpgradeScrap(float level, float cost)
-    {
-        if (cashCount >= cost)
-        {
-            scrapModifier = scrapModifier + level;
-            cashCount -= cost;
-        }
-    }
-    
-
-    public void UpgradeCash(float level, float cost)
-    {
-        if(cashCount >= cost)
-        {
-            cashModifier += level * 5;
-            cashCount -= cost;
-            robotCost = robotCost + (level * 2); 
-        }
-    }
-
-
-    public void UpgradeFabs(float level, float cost)
-    { 
-        if(cashCount >= cost)
-        {
-            cashCount -= cost;
-            foreach(GameObject fab in Fabricators)
-            {
-                fab.GetComponent<Fabricator>().spawnPower += level;
-            }
-        }
-    
-    }
-
-
-    public void UpgradeConveyors(float level, float cost)
-    {
-        if (cashCount >= cost)
-        {
-            cashCount -= cost;
-            foreach (GameObject conveyor in Conveyors)
-            {
-                conveyor.GetComponent<Conveyor>().speed += level;
-            }
-        }
-
-    }
-    */
-
-
 
     private void OnApplicationQuit()
     {
-        //SaveData(save);
+        SaveData();
     }
+
 
 }
