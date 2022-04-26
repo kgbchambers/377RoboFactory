@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a511b8fb2d9e81842b2cc55e40c254ac, type: 3}
+  m_Name: Robot6
+  m_EditorClassIdentifier: 
+  tier: 6
+  part1: {fileID: 8305264563141955343, guid: ac7749265f9c15146b0daf3786adb50b, type: 3}
+  part2: {fileID: 3914339544247391350, guid: b318476276b2e2d4f9ac08f40c9c45d7, type: 3}
+  part3: {fileID: 5994838474036337348, guid: 4f3404ce49b2b0547b108b674cd3e5d9, type: 3}
+  part4: {fileID: 919132149155446097, guid: f6b8779b5bbde2f4ba7ac3708f637751, type: 3}
