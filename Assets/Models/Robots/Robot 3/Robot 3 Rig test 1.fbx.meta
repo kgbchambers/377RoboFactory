@@ -3,7 +3,42 @@ guid: ee8b3a6629b557945977015b9d14c2ca
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chasis 2
+    second: {fileID: 2100000, guid: 21b9b82bc38a0de48946c7721ba12e1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arms
+    second: {fileID: 2100000, guid: 749cf1a8186baf34a957c4c397b9f8f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chasis
+    second: {fileID: 2100000, guid: 1abd8b4d9e42ce546bec968b3cf33bc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye
+    second: {fileID: 2100000, guid: fd08de71ff264be429bfac0c8cca19c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: face
+    second: {fileID: 2100000, guid: dce275c8ace2cef4cbbbf691145d847c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal stuff
+    second: {fileID: 2100000, guid: 76e6aecc4e7dfa74b9fc6f6df9685653, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalish
+    second: {fileID: 2100000, guid: 864a68c6e710f66418160d482752db5b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Robot2
   m_EditorClassIdentifier: 
   tier: 2
-  part1: {fileID: 418889491133951079, guid: 7ee0534c2f7ca704db63580327c3e00a, type: 3}
-  part2: {fileID: 4526840880446734474, guid: 012a0786c09cd5b4f9622e3d5173adec, type: 3}
-  part3: {fileID: 1977501999553125275, guid: 4ae2968786dbb8e45a1aa840369d24a9, type: 3}
-  part4: {fileID: 8283753926641929727, guid: aba97074d4915a0438b7f712277a0c6c, type: 3}
+  part1: {fileID: 783512974192545030, guid: 7c6cbbd583317334cbfff9c7822dfb49, type: 3}
+  part2: {fileID: 5810317320027775226, guid: 995bd1d8e0b0cf947bb16278fd1fd397, type: 3}
+  part3: {fileID: 6214363763367561244, guid: ca035ee594fbc344a81b393f428a70ee, type: 3}
+  part4: {fileID: 919132149155446097, guid: 0f4a2cd7ed36e924abbf7346cb8f9683, type: 3}

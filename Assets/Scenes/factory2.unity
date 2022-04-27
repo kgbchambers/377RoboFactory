@@ -4703,11 +4703,11 @@ RectTransform:
   m_Father: {fileID: 7716842079247809269}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2000, y: 1250}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 379.67346}
+  m_SizeDelta: {x: 2000, y: 2650}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &3342283790053369870
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,7 +4760,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1205, y: 1378}
+  m_SizeDelta: {x: 1380, y: 1378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3342283790139187803
 GameObject:
@@ -4807,10 +4807,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.91886795, g: 0.93663144, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6262,10 +6262,10 @@ MonoBehaviour:
   m_Content: {fileID: 3342283790053369869}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 2
-  m_Elasticity: 5
+  m_MovementType: 1
+  m_Elasticity: 1
   m_Inertia: 1
-  m_DecelerationRate: 0.15
+  m_DecelerationRate: 0.45
   m_ScrollSensitivity: 10
   m_Viewport: {fileID: 7716842079247809269}
   m_HorizontalScrollbar: {fileID: 0}
