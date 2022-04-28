@@ -31,7 +31,7 @@ public class UpgradeInventoryCreator : MonoBehaviour
                 UpgradeItem upgradeItem = instance.GetComponent<UpgradeItem>();
                 upgradeItem.upgrade = upgrade;
                 upgradeItem.NameText.text = "" + upgrade.upgradeName;
-                upgradeItem.CostText.text = "" + upgrade.cost + " Gold";
+                upgradeItem.CostText.text = "" + upgrade.cost;
                 upgradeItem.tier = 0;
 
                 if (upgradeItem.upgrade.makeModifierMultiplicative)

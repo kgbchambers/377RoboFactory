@@ -8,6 +8,8 @@ public class Conveyor : MonoBehaviour
     public bool isRotated;
     public bool isNegativeRotated;
     Rigidbody rBody;
+
+
     void Start()
     {
         rBody = GetComponent<Rigidbody>();

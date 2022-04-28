@@ -22,7 +22,7 @@ MonoBehaviour:
   tierMod7: 0
   tierMod8: 0
   tierMod9: 0
-  makeModifierMultiplicative: 1
+  makeModifierMultiplicative: 0
   cost: 1250
   modifier: 5
   isModifyingScrapCapacity: 0

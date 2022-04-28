@@ -9,7 +9,6 @@ using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
-
     private PlayerInput touchControls;
     private float timer;
 
@@ -83,7 +82,7 @@ public class GameManager : Singleton<GameManager>
     private void UpdateUI()
     {
         scrapCountText.text = "Scrap: " + (int) scrapCount;
-        goldCountText.text = (int) goldCount + " Gold";
+        goldCountText.text = goldCount.ToString();
     }
 
 
