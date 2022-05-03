@@ -28,7 +28,7 @@ public class Fabricator : MonoBehaviour
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
-        spawnPower = 3f;
+        spawnPower = 20f;
         speed = 3f;
     }
 
