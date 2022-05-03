@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: -3651313454576465263}
   - component: {fileID: 576330416453232786}
   m_Layer: 0
-  m_Name: Robot 1 Head
+  m_Name: robot1_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8944924101479545863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.914799, y: 0.00000023841858, z: -2.6894963}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8408821609649304142}
@@ -375,8 +375,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7479665, y: 2.3289042, z: 1.9498978}
-  m_Center: {x: -0.015785098, y: 3.5629306, z: -0.11828995}
+  m_Size: {x: 1.4976511, y: 1.6423948, z: 1.9498978}
+  m_Center: {x: -0.019142661, y: 3.7689793, z: -0.11828998}
 --- !u!54 &576330416453232786
 Rigidbody:
   m_ObjectHideFlags: 0

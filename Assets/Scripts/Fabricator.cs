@@ -28,7 +28,7 @@ public class Fabricator : MonoBehaviour
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
-        spawnPower = 3f;
+        spawnPower = 1.3f;
         speed = 3f;
     }
 
@@ -36,8 +36,8 @@ public class Fabricator : MonoBehaviour
     {
         if (processNumber == 1)
         {
-            GameObject part = Instantiate(robotToProduce.part1, spawnLocation);
-            part.transform.localScale = new Vector3(1, 1, 1);
+            GameObject part = Instantiate(robotToProduce.small1, spawnLocation);
+            part.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             othersRB = part.GetComponent<Rigidbody>();
             othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
 
@@ -69,7 +69,7 @@ public class Fabricator : MonoBehaviour
             case 2:
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
-                part = Instantiate(robotToProduce.part2, spawnLocation);
+                part = Instantiate(robotToProduce.med1, spawnLocation);
                 part.transform.localScale = new Vector3(1, 1, 1);
 
                 othersRB = part.GetComponent<Rigidbody>();
@@ -81,7 +81,7 @@ public class Fabricator : MonoBehaviour
             case 3:
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
-                part = Instantiate(robotToProduce.part3, spawnLocation);
+                part = Instantiate(robotToProduce.med1, spawnLocation);
                 part.transform.localScale = new Vector3(1, 1, 1);
 
                 othersRB = part.GetComponent<Rigidbody>();
@@ -93,7 +93,7 @@ public class Fabricator : MonoBehaviour
             case 4:
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
-                part = Instantiate(robotToProduce.part4, spawnLocation);
+                part = Instantiate(robotToProduce.final, spawnLocation);
                 part.transform.localScale = new Vector3(1, 1, 1);
                 othersRB = part.GetComponent<Rigidbody>();
                 othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
