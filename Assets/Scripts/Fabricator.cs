@@ -16,13 +16,19 @@ public class Fabricator : MonoBehaviour
     public Robot robotToProduce;
     public float spawnPower;
 
+    //getting related animation things
+    public Animator animator;
+    public Material lightoff;
+    public Material lighton;
+    public GameObject lightbulb;
+
     private Rigidbody othersRB;
     private GameObject part;
 
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
-        spawnPower = 1.2f;
+        spawnPower = 3f;
         speed = 3f;
     }
 
@@ -31,9 +37,12 @@ public class Fabricator : MonoBehaviour
         if (processNumber == 1)
         {
             GameObject part = Instantiate(robotToProduce.part1, spawnLocation);
-            part.transform.localScale = new Vector3(12, 12, 12);
+            part.transform.localScale = new Vector3(1, 1, 1);
             othersRB = part.GetComponent<Rigidbody>();
-            othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
+            othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+
+            //animate the fabricator after spawning part
+            animator.SetTrigger("trigger");
         }
     }
 
@@ -43,6 +52,10 @@ public class Fabricator : MonoBehaviour
         if (other.tag == "Robot")
         {
             Destroy(other.gameObject);
+
+            //change lightbulb material
+            lightbulb.GetComponent<MeshRenderer> ().material = lighton;
+
             StartCoroutine(FabricationDelay());
         }
     }
@@ -54,25 +67,39 @@ public class Fabricator : MonoBehaviour
         switch (processNumber)
         {
             case 2:
+
+                lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                 part = Instantiate(robotToProduce.part2, spawnLocation);
-                part.transform.localScale = new Vector3(12, 12, 12);
+                part.transform.localScale = new Vector3(1, 1, 1);
 
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+
+                //animate the fabricator after spawning part
+                animator.SetTrigger("trigger");
                 break;
             case 3:
 
+                lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                 part = Instantiate(robotToProduce.part3, spawnLocation);
-                part.transform.localScale = new Vector3(12, 12, 12);
+                part.transform.localScale = new Vector3(1, 1, 1);
 
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+
+                //animate the fabricator after spawning part
+                animator.SetTrigger("trigger");
                 break;
             case 4:
+
+                lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                 part = Instantiate(robotToProduce.part4, spawnLocation);
-                part.transform.localScale = new Vector3(12, 12, 12);
+                part.transform.localScale = new Vector3(1, 1, 1);
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+
+                //animate the fabricator after spawning part
+                animator.SetTrigger("trigger");
                 break;
             default:
                 break;
