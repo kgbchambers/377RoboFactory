@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 6341243197742118048}
   - component: {fileID: 4079583451079043498}
   m_Layer: 0
-  m_Name: robot1_body_ragdoll
+  m_Name: old body ragdoll
   m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
