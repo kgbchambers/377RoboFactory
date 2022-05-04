@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217114818519067918}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1495, y: 0.11475, z: 0.096}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalPosition: {x: -6.6014085, y: 3.2193642, z: 4.912714}
+  m_LocalScale: {x: 1125, y: 1125, z: 1125}
   m_Children: []
   m_Father: {fileID: 8604428076735325885}
   m_RootOrder: 3
@@ -108,8 +108,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4892693112002121898}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.14376855, y: 0.11475, z: 0.096}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalPosition: {x: 6.595677, y: 3.2193642, z: 4.912714}
+  m_LocalScale: {x: 1125, y: 1125, z: 1125}
   m_Children: []
   m_Father: {fileID: 8604428076735325885}
   m_RootOrder: 2
@@ -190,8 +190,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5939502573756016192}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.07989937, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalPosition: {x: 0.12609187, y: 1.6510859, z: 0.5927142}
+  m_LocalScale: {x: 1125, y: 1124.9999, z: 1124.9999}
   m_Children: []
   m_Father: {fileID: 8604428076735325885}
   m_RootOrder: 1
@@ -273,8 +273,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7221770686276210713}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -0.17527437, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalPosition: {x: 0.12609187, y: -9.831733, z: 0.5927142}
+  m_LocalScale: {x: 1125, y: 1124.9999, z: 1124.9999}
   m_Children: []
   m_Father: {fileID: 8604428076735325885}
   m_RootOrder: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 2028704951224629685}
   m_Layer: 0
   m_Name: robot1_testhead
-  m_TagString: Untagged
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,7 +390,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.20276424
-  m_Height: 0.58849835
+  m_Radius: 0.6104607
+  m_Height: 1.6521181
   m_Direction: 1
-  m_Center: {x: 0.00015202165, y: 0.046682954, z: 0}
+  m_Center: {x: 0.009400904, y: 0.13411015, z: 0}
