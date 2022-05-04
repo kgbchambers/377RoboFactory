@@ -37,7 +37,7 @@ public class Fabricator : MonoBehaviour
         if (processNumber == 1)
         {
             GameObject part = Instantiate(robotToProduce.small1, spawnLocation);
-            part.transform.localScale = new Vector3(0.003f, 0.003f, 0.003f);
+            part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
             othersRB = part.GetComponent<Rigidbody>();
             othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
 
@@ -70,7 +70,7 @@ public class Fabricator : MonoBehaviour
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                 part = Instantiate(robotToProduce.med1, spawnLocation);
-                part.transform.localScale = new Vector3(1f, 1f, 1f);
+                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
 
                 othersRB = part.GetComponent<Rigidbody>();
                 othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
@@ -82,7 +82,7 @@ public class Fabricator : MonoBehaviour
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                 part = Instantiate(robotToProduce.med1, spawnLocation);
-                part.transform.localScale = new Vector3(1f, 1f, 1f);
+                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
 
                 othersRB = part.GetComponent<Rigidbody>();
                 othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
@@ -94,7 +94,7 @@ public class Fabricator : MonoBehaviour
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                 part = Instantiate(robotToProduce.final, spawnLocation);
-                part.transform.localScale = new Vector3(1f, 1f, 1f);
+                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
                 othersRB = part.GetComponent<Rigidbody>();
                 othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
 
