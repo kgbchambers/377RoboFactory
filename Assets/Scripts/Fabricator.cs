@@ -16,24 +16,38 @@ public class Fabricator : MonoBehaviour
     public Robot robotToProduce;
     public float spawnPower;
 
+    //getting related animation things
+    public Animator animator;
+    public Material lightoff;
+    public Material lighton;
+    public GameObject lightbulb;
+
     private Rigidbody othersRB;
     private GameObject part;
 
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
+<<<<<<< HEAD
         spawnPower = 1.2f;
         speed = 1f;
+=======
+        spawnPower = 1.3f;
+        speed = 3f;
+>>>>>>> Dev
     }
 
     public void buildRobot()
     {
         if (processNumber == 1)
         {
-            GameObject part = Instantiate(robotToProduce.part1, spawnLocation);
-            part.transform.localScale = new Vector3(12, 12, 12);
+            GameObject part = Instantiate(robotToProduce.small1, spawnLocation);
+            part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
             othersRB = part.GetComponent<Rigidbody>();
-            othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
+            othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+
+            //animate the fabricator after spawning part
+            animator.SetTrigger("trigger");
         }
     }
 
@@ -43,6 +57,10 @@ public class Fabricator : MonoBehaviour
         if (other.tag == "Robot")
         {
             Destroy(other.gameObject);
+
+            //change lightbulb material
+            lightbulb.GetComponent<MeshRenderer> ().material = lighton;
+
             StartCoroutine(FabricationDelay());
         }
     }
@@ -54,25 +72,39 @@ public class Fabricator : MonoBehaviour
         switch (processNumber)
         {
             case 2:
-                part = Instantiate(robotToProduce.part2, spawnLocation);
-                part.transform.localScale = new Vector3(12, 12, 12);
+
+                lightbulb.GetComponent<MeshRenderer>().material = lightoff;
+                part = Instantiate(robotToProduce.med1, spawnLocation);
+                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
 
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+
+                //animate the fabricator after spawning part
+                animator.SetTrigger("trigger");
                 break;
             case 3:
 
-                part = Instantiate(robotToProduce.part3, spawnLocation);
-                part.transform.localScale = new Vector3(12, 12, 12);
+                lightbulb.GetComponent<MeshRenderer>().material = lightoff;
+                part = Instantiate(robotToProduce.med1, spawnLocation);
+                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
 
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+
+                //animate the fabricator after spawning part
+                animator.SetTrigger("trigger");
                 break;
             case 4:
-                part = Instantiate(robotToProduce.part4, spawnLocation);
-                part.transform.localScale = new Vector3(12, 12, 12);
+
+                lightbulb.GetComponent<MeshRenderer>().material = lightoff;
+                part = Instantiate(robotToProduce.final, spawnLocation);
+                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(Vector3.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+
+                //animate the fabricator after spawning part
+                animator.SetTrigger("trigger");
                 break;
             default:
                 break;

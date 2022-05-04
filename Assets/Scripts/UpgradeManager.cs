@@ -17,7 +17,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
     {
         if (!PlayerPrefs.HasKey("SaveCheck"))
         {
-            //PlayerPrefs.SetInt("SaveCheck", 1);
+            PlayerPrefs.SetInt("SaveCheck", 1);
             PlayerPrefs.SetInt("scrapRechargeTier", scrapRechargeTier);
             PlayerPrefs.SetInt("scrapCapTier", scrapCapTier);
             PlayerPrefs.SetInt("conveyorTier", conveyorTier);
@@ -36,7 +36,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
         
         foreach(Upgrade upgrade in upgrades)
         {
-            upgrade.cost =
+            //upgrade.cost =
         }
 
         upgrades = upgrades.OrderBy(up => up.cost).ToList();

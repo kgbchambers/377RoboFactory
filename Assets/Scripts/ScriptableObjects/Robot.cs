@@ -6,8 +6,11 @@ public class Robot : ScriptableObject
     public int tier;
     private int productionLevel = 0;
 
-    public GameObject part1;
-    public GameObject part2;
-    public GameObject part3;
-    public GameObject part4;
+    public GameObject small1;
+    public GameObject small2;
+    public GameObject small3;
+    public GameObject med1;
+    public GameObject med2;
+    public GameObject med3;
+    public GameObject final;
 }

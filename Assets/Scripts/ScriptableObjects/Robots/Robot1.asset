@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Robot1
   m_EditorClassIdentifier: 
   tier: 1
-  fullRobot: {fileID: 7724078098358218980, guid: cd83f59230fcc0f4ca04f068cf6ea2c4, type: 3}
-  chassisLegs: {fileID: 5839138121496492152, guid: 9dd7d3b54d723e442942fcb8b4ffeb6c, type: 3}
-  legs: {fileID: 8033727629777759037, guid: f751281d9692d634a8c0810783ee2a10, type: 3}
+  small1: {fileID: 5441214391899768856, guid: 175d6a86e818a47499d171658917c6cc, type: 3}
+  small2: {fileID: 172662236315501643, guid: d2916ede86d1c764eadc10872daca71a, type: 3}
+  small3: {fileID: 5441214391899768856, guid: 175d6a86e818a47499d171658917c6cc, type: 3}
+  med1: {fileID: 8944924101479545863, guid: 7f6fc1c7eec22b54fb494fd8c1a58396, type: 3}
+  med2: {fileID: 1484521267056973282, guid: d2207012c964eea4e88dcce27e10c278, type: 3}
+  med3: {fileID: 1484521267056973282, guid: d2207012c964eea4e88dcce27e10c278, type: 3}
+  final: {fileID: 1484521267056973282, guid: d2207012c964eea4e88dcce27e10c278, type: 3}
