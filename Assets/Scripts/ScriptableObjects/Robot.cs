@@ -12,5 +12,6 @@ public class Robot : ScriptableObject
     public GameObject med1;
     public GameObject med2;
     public GameObject med3;
-    public GameObject final;
+    public GameObject full;
+    public GameObject box;
 }

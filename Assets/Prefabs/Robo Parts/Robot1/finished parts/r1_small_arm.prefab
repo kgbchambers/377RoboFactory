@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 823618909969522437}
   - component: {fileID: 823618909969522439}
+  - component: {fileID: 7575971978317060973}
   m_Layer: 0
   m_Name: r1_small_arm
   m_TagString: Robot
@@ -48,6 +49,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7575971978317060973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823618909969522436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.50637656, y: 0.10888951, z: 0.33523542}
+  m_Center: {x: -0.121577896, y: 0.049864996, z: 0.0018332303}
 --- !u!1 &823618910234271311
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,13 +87,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823618910234271311}
-  m_LocalRotation: {x: 0.5916545, y: 0.29706845, z: 0.33628327, w: 0.66978276}
-  m_LocalPosition: {x: 0, y: -0.00015917653, z: 0.0015854135}
+  m_LocalRotation: {x: 0.6194361, y: 0.29037458, z: 0.23467943, w: 0.6905846}
+  m_LocalPosition: {x: -0.009968311, y: -0.017435886, z: -0.00758396}
   m_LocalScale: {x: 8.717655, y: 8.717655, z: 8.717655}
   m_Children: []
   m_Father: {fileID: 823618909969522437}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 36.353, y: 81.187, z: 84.748}
+  m_LocalEulerAnglesHint: {x: 45.993, y: 84.717, z: 79.849}
 --- !u!33 &823618910234271306
 MeshFilter:
   m_ObjectHideFlags: 0
