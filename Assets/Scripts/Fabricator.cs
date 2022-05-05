@@ -28,16 +28,16 @@ public class Fabricator : MonoBehaviour
     public void Start()
     {
         spawnLocation = transform.Find("RobotSpawner");
-        spawnPower = 1.3f;
-        speed = 3f;
+        spawnPower = 2f;
+        speed = 2f;
     }
 
     public void buildRobot()
     {
         if (processNumber == 1)
         {
-            GameObject part = Instantiate(robotToProduce.small1, spawnLocation);
-            part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+            GameObject part = Instantiate(robotToProduce.small1, spawnLocation.position, Quaternion.identity);
+            //part.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
             othersRB = part.GetComponent<Rigidbody>();
             othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
 
@@ -69,11 +69,10 @@ public class Fabricator : MonoBehaviour
             case 2:
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
-                part = Instantiate(robotToProduce.med1, spawnLocation);
-                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+                part = Instantiate(robotToProduce.med1, spawnLocation.position, Quaternion.identity);
 
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * (spawnPower+3), ForceMode.VelocityChange);
 
                 //animate the fabricator after spawning part
                 animator.SetTrigger("trigger");
@@ -81,11 +80,10 @@ public class Fabricator : MonoBehaviour
             case 3:
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
-                part = Instantiate(robotToProduce.med1, spawnLocation);
-                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+                part = Instantiate(robotToProduce.full, spawnLocation.position, Quaternion.identity);
 
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * (spawnPower+25), ForceMode.VelocityChange);
 
                 //animate the fabricator after spawning part
                 animator.SetTrigger("trigger");
@@ -93,8 +91,8 @@ public class Fabricator : MonoBehaviour
             case 4:
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
-                part = Instantiate(robotToProduce.final, spawnLocation);
-                part.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+                part = Instantiate(robotToProduce.box, spawnLocation.position, Quaternion.identity);
+
                 othersRB = part.GetComponent<Rigidbody>();
                 othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
 
