@@ -3,7 +3,22 @@ guid: c08b87f7296114a41b0f4659698da879
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dumpy
+    second: {fileID: 2100000, guid: 1ccef59f032dd8244b580d7534a69adc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic
+    second: {fileID: 2100000, guid: f4639e82e4908b34a9762c760632d7fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trash
+    second: {fileID: 2100000, guid: 4096a239e6eae1a4fbf7659b65be9409, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
