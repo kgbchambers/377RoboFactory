@@ -84,10 +84,24 @@ public class Fabricator : MonoBehaviour
             case 2:
 
                 lightbulb.GetComponent<MeshRenderer>().material = lightoff;
-                
-                part = Instantiate(robotToProduce.med1, spawnLocation.position, Quaternion.identity);
 
-                othersRB = part.GetComponent<Rigidbody>();
+                int rand = Random.Range(0, 3);
+                if (rand == 0)
+                {
+                    GameObject part = Instantiate(robotToProduce.med1, spawnLocation.position, Quaternion.identity);
+                    othersRB = part.GetComponent<Rigidbody>();
+                }
+                else if (rand == 1)
+                {
+                    GameObject part = Instantiate(robotToProduce.med2, spawnLocation.position, Quaternion.identity);
+                    othersRB = part.GetComponent<Rigidbody>();
+                }
+                else if (rand == 2)
+                {
+                    GameObject part = Instantiate(robotToProduce.med3, spawnLocation.position, Quaternion.identity);
+                    othersRB = part.GetComponent<Rigidbody>();
+                }
+
                 othersRB.AddForce(spawnLocation.right * (spawnPower+10), ForceMode.VelocityChange);
 
                 //animate the fabricator after spawning part
