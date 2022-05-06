@@ -6,6 +6,8 @@ using UnityEngine;
 public class Fabricator : MonoBehaviour
 {
 
+    private int _robotCounter;
+
     private Transform spawnLocation;
 
     [Range(1,4)]
@@ -30,6 +32,7 @@ public class Fabricator : MonoBehaviour
         spawnLocation = transform.Find("RobotSpawner");
         spawnPower = 2f;
         speed = 2f;
+        StartCoroutine(FabricatorQueue());
     }
 
     public void buildRobot()
@@ -66,15 +69,87 @@ public class Fabricator : MonoBehaviour
     {
         if (other.tag == "Robot")
         {
+            _robotCounter++;
             Destroy(other.gameObject);
 
             //change lightbulb material
             lightbulb.GetComponent<MeshRenderer> ().material = lighton;
 
-            StartCoroutine(FabricationDelay());
+            //StartCoroutine(FabricationDelay());
         }
     }
 
+
+
+    IEnumerator FabricatorQueue()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.2f);
+            if(_robotCounter > 0)
+            {
+                yield return new WaitForSeconds(speed);
+                switch (processNumber)
+                {
+                    case 2:
+
+                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
+
+                        int rand = Random.Range(0, 3);
+                        if (rand == 0)
+                        {
+                            GameObject part = Instantiate(robotToProduce.med1, spawnLocation.position, Quaternion.identity);
+                            othersRB = part.GetComponent<Rigidbody>();
+                        }
+                        else if (rand == 1)
+                        {
+                            GameObject part = Instantiate(robotToProduce.med2, spawnLocation.position, Quaternion.identity);
+                            othersRB = part.GetComponent<Rigidbody>();
+                        }
+                        else if (rand == 2)
+                        {
+                            GameObject part = Instantiate(robotToProduce.med3, spawnLocation.position, Quaternion.identity);
+                            othersRB = part.GetComponent<Rigidbody>();
+                        }
+
+                        othersRB.AddForce(spawnLocation.right * (spawnPower + 10), ForceMode.VelocityChange);
+
+                        //animate the fabricator after spawning part
+                        animator.SetTrigger("trigger");
+                        break;
+                    case 3:
+
+                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
+                        part = Instantiate(robotToProduce.full, spawnLocation.position, Quaternion.identity);
+
+                        othersRB = part.GetComponent<Rigidbody>();
+                        othersRB.AddForce(spawnLocation.right * (spawnPower + 20), ForceMode.VelocityChange);
+
+                        //animate the fabricator after spawning part
+                        animator.SetTrigger("trigger");
+                        break;
+                    case 4:
+
+                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
+                        part = Instantiate(robotToProduce.box, spawnLocation.position, Quaternion.identity);
+
+                        othersRB = part.GetComponent<Rigidbody>();
+                        othersRB.AddForce(spawnLocation.right * (spawnPower + 10), ForceMode.VelocityChange);
+
+                        //animate the fabricator after spawning part
+                        animator.SetTrigger("trigger");
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        }
+    }
+
+
+
+    /*
 
     IEnumerator FabricationDelay()
     {
@@ -133,4 +208,7 @@ public class Fabricator : MonoBehaviour
                 break;
         }
     }
+
+    */
+
 }
