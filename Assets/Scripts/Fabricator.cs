@@ -116,6 +116,7 @@ public class Fabricator : MonoBehaviour
 
                         //animate the fabricator after spawning part
                         animator.SetTrigger("trigger");
+                        _robotCounter--;
                         break;
                     case 3:
 
@@ -127,6 +128,7 @@ public class Fabricator : MonoBehaviour
 
                         //animate the fabricator after spawning part
                         animator.SetTrigger("trigger");
+                        _robotCounter--;
                         break;
                     case 4:
 
@@ -138,6 +140,7 @@ public class Fabricator : MonoBehaviour
 
                         //animate the fabricator after spawning part
                         animator.SetTrigger("trigger");
+                        _robotCounter--;
                         break;
                     default:
                         break;
