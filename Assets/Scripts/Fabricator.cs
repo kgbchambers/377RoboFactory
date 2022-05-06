@@ -61,6 +61,7 @@ public class Fabricator : MonoBehaviour
 
             //animate the fabricator after spawning part
             animator.SetTrigger("trigger");
+            lightbulb.GetComponent<MeshRenderer>().material = lightoff;
         }
     }
 
@@ -71,9 +72,7 @@ public class Fabricator : MonoBehaviour
         {
             _robotCounter++;
             Destroy(other.gameObject);
-
-            //change lightbulb material
-            lightbulb.GetComponent<MeshRenderer> ().material = lighton;
+            lightbulb.GetComponent<MeshRenderer>().material = lighton;
 
             //StartCoroutine(FabricationDelay());
         }
@@ -85,6 +84,7 @@ public class Fabricator : MonoBehaviour
     {
         while (true)
         {
+
             yield return new WaitForSeconds(0.2f);
             if(_robotCounter > 0)
             {
@@ -93,8 +93,7 @@ public class Fabricator : MonoBehaviour
                 {
                     case 2:
 
-                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
-
+                        lightbulb.GetComponent<MeshRenderer>().material = lighton;
                         int rand = Random.Range(0, 3);
                         if (rand == 0)
                         {
@@ -116,10 +115,11 @@ public class Fabricator : MonoBehaviour
 
                         //animate the fabricator after spawning part
                         animator.SetTrigger("trigger");
+                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                         break;
                     case 3:
 
-                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
+                        lightbulb.GetComponent<MeshRenderer>().material = lighton;
                         part = Instantiate(robotToProduce.full, spawnLocation.position, Quaternion.identity);
 
                         othersRB = part.GetComponent<Rigidbody>();
@@ -127,16 +127,18 @@ public class Fabricator : MonoBehaviour
 
                         //animate the fabricator after spawning part
                         animator.SetTrigger("trigger");
+                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                         break;
                     case 4:
 
-                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
+                        lightbulb.GetComponent<MeshRenderer>().material = lighton;
                         part = Instantiate(robotToProduce.box, spawnLocation.position, Quaternion.identity);
 
                         othersRB = part.GetComponent<Rigidbody>();
                         othersRB.AddForce(spawnLocation.right * (spawnPower + 10), ForceMode.VelocityChange);
 
                         //animate the fabricator after spawning part
+                        lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                         animator.SetTrigger("trigger");
                         break;
                     default:
