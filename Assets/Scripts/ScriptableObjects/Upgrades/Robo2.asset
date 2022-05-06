@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: Robo2
   m_EditorClassIdentifier: 
   upgradeName: Titanium Plating
-  tier: 1
-  modifier: 1.5
-  makeModifierMultiplicative: 1
+  tierMod1: 0
+  tierMod2: 0
+  tierMod3: 0
+  tierMod4: 0
+  tierMod5: 0
+  tierMod6: 0
+  tierMod7: 0
+  tierMod8: 0
+  tierMod9: 0
+  makeModifierMultiplicative: 0
   cost: 10000
+  modifier: 1.5
   isModifyingScrapCapacity: 0
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 0

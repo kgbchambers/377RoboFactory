@@ -6,7 +6,7 @@ using UnityEngine;
 public class Fabricator : MonoBehaviour
 {
 
-    private int _robotCounter;
+    public int _robotCounter;
 
     private Transform spawnLocation;
 
