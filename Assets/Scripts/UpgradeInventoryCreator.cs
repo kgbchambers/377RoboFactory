@@ -33,7 +33,7 @@ public class UpgradeInventoryCreator : MonoBehaviour
                 UpgradeItem upgradeItem = instance.GetComponent<UpgradeItem>();
                 upgradeItem.upgrade = upgrade;
                 upgradeItem.NameText.text = "" + upgrade.upgradeName;
-                upgradeItem.CostText.text = "" + upgrade.cost + " Gold";
+                upgradeItem.CostText.text = "" + upgrade.cost;
 
                 if (upgradeItem.upgrade.makeModifierMultiplicative)
                     op = "x ";
@@ -72,7 +72,7 @@ public class UpgradeInventoryCreator : MonoBehaviour
                 UpgradeItem upgradeItem = instance.GetComponent<UpgradeItem>();
                 upgradeItem.upgrade = upgrade;
                 upgradeItem.NameText.text = "" + upgrade.upgradeName;
-                upgradeItem.CostText.text = "" + upgrade.cost + " Gold";
+                upgradeItem.CostText.text = "" + upgrade.cost;
 
                 if (upgradeItem.upgrade.makeModifierMultiplicative)
                     op = "x ";

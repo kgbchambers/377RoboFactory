@@ -37,18 +37,23 @@ public class Fabricator : MonoBehaviour
         if (processNumber == 1)
         {
             int rand = Random.Range(0, 3);
-            if(rand ==0)
+            if(rand == 0)
+			{
                 GameObject part = Instantiate(robotToProduce.small1, spawnLocation.position, Quaternion.identity);
+                othersRB = part.GetComponent<Rigidbody>();
+            }
             else if (rand == 1)
 			{
                 GameObject part = Instantiate(robotToProduce.small2, spawnLocation.position, Quaternion.identity);
+                othersRB = part.GetComponent<Rigidbody>();
             }
             else if (rand == 2)
 			{
                 GameObject part = Instantiate(robotToProduce.small3, spawnLocation.position, Quaternion.identity);
+                othersRB = part.GetComponent<Rigidbody>();
             }
             //part.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
-            othersRB = part.GetComponent<Rigidbody>();
+            
             othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
 
             //animate the fabricator after spawning part
@@ -94,7 +99,7 @@ public class Fabricator : MonoBehaviour
                 part = Instantiate(robotToProduce.full, spawnLocation.position, Quaternion.identity);
 
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(spawnLocation.right * (spawnPower+35), ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * (spawnPower+20), ForceMode.VelocityChange);
 
                 //animate the fabricator after spawning part
                 animator.SetTrigger("trigger");
@@ -105,7 +110,7 @@ public class Fabricator : MonoBehaviour
                 part = Instantiate(robotToProduce.box, spawnLocation.position, Quaternion.identity);
 
                 othersRB = part.GetComponent<Rigidbody>();
-                othersRB.AddForce(spawnLocation.right * spawnPower, ForceMode.VelocityChange);
+                othersRB.AddForce(spawnLocation.right * (spawnPower+10), ForceMode.VelocityChange);
 
                 //animate the fabricator after spawning part
                 animator.SetTrigger("trigger");

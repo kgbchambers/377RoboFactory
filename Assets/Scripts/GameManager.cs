@@ -77,7 +77,7 @@ public class GameManager : Singleton<GameManager>
     private void UpdateUI()
     {
         scrapCountText.text = "Scrap: " + scrapCount;
-        goldCountText.text = goldCount + " Gold";
+        goldCountText.text = goldCount.ToString();
     }
 
 

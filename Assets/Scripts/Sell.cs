@@ -9,12 +9,12 @@ public class Sell : MonoBehaviour
         if(other.tag == "Robot")
         {
             StartCoroutine(Delay(other));
-            GameManager.instance.addCash();
         }
     }
-    IEnumerator Delay(GameObject Robo)
+    IEnumerator Delay(Collider Robo)
 	{
         yield return new WaitForSeconds(5f);
         Destroy(Robo.gameObject);
+        GameManager.instance.addCash();
     }
 }
