@@ -14,10 +14,11 @@ public class Sell : MonoBehaviour
     IEnumerator Delay(Collider Robo)
 	{
         yield return new WaitForSeconds(5f);
-		if (Robo.gameObject != null)
+        GameManager.instance.addCash();
+        if (Robo.gameObject != null)
 		{
 			Destroy(Robo.gameObject);
 		}
-		GameManager.instance.addCash();
+		
     }
 }

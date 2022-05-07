@@ -109,7 +109,7 @@ public class GameManager : Singleton<GameManager>
 
         foreach (GameObject conveyor in GameManager.instance.Conveyors)
         {
-            conveyor.GetComponent<Conveyor>().speed = 0.1f;
+            conveyor.GetComponent<Conveyor>().speed = 0.5f;
         }
 
         truckCap = 6f;
