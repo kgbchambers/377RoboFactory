@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
@@ -65,6 +66,7 @@ public class GameManager : Singleton<GameManager>
         }
         StartCoroutine(IncrementScrap());
         StartCoroutine(StartUIUpdate());
+        GetConveyors();
     }
 
 
@@ -124,6 +126,14 @@ public class GameManager : Singleton<GameManager>
 
         robotValue = 25f;
     }
+
+
+    private void GetConveyors()
+    {
+        Conveyors = new List<GameObject>();
+        Conveyors = GameObject.FindGameObjectsWithTag("Conveyor").ToList();
+    }
+
 
     public void ProduceRobot()
     {

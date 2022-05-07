@@ -99,7 +99,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
             {
                 foreach (GameObject conveyor in GameManager.instance.Conveyors)
                 {
-                    conveyor.GetComponent<Conveyor>().speed = conveyor.GetComponent<Conveyor>().speed + mod;
+                    conveyor.GetComponent<Conveyor>().speed += mod;
                 }
             }
         }
