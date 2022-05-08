@@ -44,11 +44,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
     }
 
 
+
     public void RecalculateCost()
     {
 
     }
-
 
 
 
@@ -69,6 +69,8 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     }
 
+
+
     public void UpgradeScrapRecharge(string op, float mod, float cost)
     {
         if (GameManager.instance.spendCash(cost))
@@ -83,6 +85,8 @@ public class UpgradeManager : Singleton<UpgradeManager>
             }
         }
     }
+
+
 
     public void UpgradeConveyorSpeed(string op, float mod, float cost)
     {
@@ -106,6 +110,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
     }
 
 
+
     public void UpgradeTruckCap(string op, float mod, float cost)
     {
         if (GameManager.instance.spendCash(cost))
@@ -120,6 +125,8 @@ public class UpgradeManager : Singleton<UpgradeManager>
             }
         }
     }
+
+
 
     public void UpgradeTruckSpeed(string op, float mod, float cost)
     {

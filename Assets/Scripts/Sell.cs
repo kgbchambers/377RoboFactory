@@ -8,14 +8,18 @@ public class Sell : MonoBehaviour
     {
         if(other.tag == "Robot")
         {
-            StartCoroutine(Delay(other));
+            if(other.tag != "Selling")
+            {
+                other.tag = "Selling";
+                StartCoroutine(Delay(other.gameObject));
+            }
         }
     }
-    IEnumerator Delay(Collider Robo)
+    IEnumerator Delay(GameObject Robo)
 	{
         yield return new WaitForSeconds(5f);
         GameManager.instance.addCash();
-        if (Robo.gameObject != null)
+        if (Robo !)
 		{
 			Destroy(Robo.gameObject);
 		}

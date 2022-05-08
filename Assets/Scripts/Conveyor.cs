@@ -9,13 +9,10 @@ public class Conveyor : MonoBehaviour
     public bool isNegativeRotated;
     Rigidbody rBody;
 
-
-
     void Start()
     {
         rBody = GetComponent<Rigidbody>();
     }
-
 
 
     // Update is called once per frame
