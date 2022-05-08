@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Fabricator Materials
   tier: 1
-  modifier: 0.1
+  modifier: 0.5
   makeModifierMultiplicative: 0
   cost: 500
   isModifyingScrapCapacity: 0

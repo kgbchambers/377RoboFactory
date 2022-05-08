@@ -18,6 +18,6 @@ MonoBehaviour:
   small3: {fileID: 172662236315501643, guid: d2916ede86d1c764eadc10872daca71a, type: 3}
   med1: {fileID: 4341392455232048898, guid: d2ec84c68932c774b9378d96af4c7b52, type: 3}
   med2: {fileID: 2614804277754111344, guid: 24ecb6a103c9bea429a4785c4fe95586, type: 3}
-  med3: {fileID: 5559324405318614883, guid: 2b38f7d18fc951847b323ed568890db6, type: 3}
+  med3: {fileID: 5730097604214293918, guid: 13e6c9f2835bedd44ada6e698334d55c, type: 3}
   full: {fileID: 4341392455232048898, guid: 7fbc354c53097b142a653f2f20f0e396, type: 3}
   box: {fileID: 8512071513386143989, guid: c4c12e236da4fac4dbd47c072fef2e5c, type: 3}

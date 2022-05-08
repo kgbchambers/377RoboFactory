@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1449045079139455678}
   - component: {fileID: 3745021934999594612}
   - component: {fileID: 539935164705150088}
+  - component: {fileID: 5755501809117084539}
+  - component: {fileID: 6821615270796190778}
   m_Layer: 0
   m_Name: concreteblock
   m_TagString: Untagged
@@ -95,3 +97,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.034124497, y: 0.0341245, z: 0.07051795}
   m_Center: {x: 0, y: 0.01706225, z: 0}
+--- !u!65 &5755501809117084539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952111667407603617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.029809374, y: 0.00427885, z: 0.06449774}
+  m_Center: {x: 0.00006505053, y: 0.03504291, z: -0.0004778134}
+--- !u!114 &6821615270796190778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952111667407603617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66161c716c55d342a7df564e6fd84b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

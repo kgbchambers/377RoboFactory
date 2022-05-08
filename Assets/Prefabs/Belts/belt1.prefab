@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1510192555780015553}
   m_Layer: 0
   m_Name: belt1
-  m_TagString: Untagged
+  m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

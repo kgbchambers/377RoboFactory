@@ -14,6 +14,9 @@ public class DestroyThis : MonoBehaviour
     IEnumerator WaitForDestroy(GameObject robo)
     {
         yield return new WaitForSeconds(20f);
-        Destroy(robo);
-    }
+		if (robo != null)
+		{
+			Destroy(robo);
+		}
+	}
 }
