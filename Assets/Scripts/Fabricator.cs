@@ -129,6 +129,7 @@ public class Fabricator : MonoBehaviour
                         lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                         _robotCounter--;
                         break;
+
                     case 3:
                         //change lightbulb material
                         lightbulb.GetComponent<MeshRenderer>().material = lighton;
@@ -143,6 +144,7 @@ public class Fabricator : MonoBehaviour
                         lightbulb.GetComponent<MeshRenderer>().material = lightoff;
                         _robotCounter--;
                         break;
+
                     case 4:
                         //change lightbulb material
                         lightbulb.GetComponent<MeshRenderer>().material = lighton;
