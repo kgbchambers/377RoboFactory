@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Robot4
   m_EditorClassIdentifier: 
   tier: 4
-  part1: {fileID: 2122084781998558443, guid: 494cd1cc26b58e241abc4cb490cab610, type: 3}
-  part2: {fileID: 153569193063346408, guid: 7a5f866a22dca7245a5721316dafb0be, type: 3}
-  part3: {fileID: 4068146951171315000, guid: 560b2796a5840b7459ec0ff707694932, type: 3}
-  part4: {fileID: 919132149155446097, guid: 8f760d61dee88924ba68935740647eec, type: 3}
+  small1: {fileID: 2726315339701812592, guid: e5d26d7f224d4aa46932245342daf8bc, type: 3}
+  small2: {fileID: 7866180896537398109, guid: 06a4a846b1b0bbb45a645832db38f7c9, type: 3}
+  small3: {fileID: 1530264772505877087, guid: e24dade9ee8f330428ea135bfbf1c72c, type: 3}
+  med1: {fileID: 5665428943329906929, guid: b10c57dd15d64e442906cb6036ceec89, type: 3}
+  med2: {fileID: 5633197257657265219, guid: 15932e4a4fed1a240ba358f104591531, type: 3}
+  med3: {fileID: 742748220626351004, guid: 63e73c0c41fb28348be49764f0a4c551, type: 3}
+  full: {fileID: 90779858830693926, guid: a38ddc592f185574488fc15c33988044, type: 3}
+  box: {fileID: 8512071513386143989, guid: c4c12e236da4fac4dbd47c072fef2e5c, type: 3}

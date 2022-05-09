@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Robot8
   m_EditorClassIdentifier: 
   tier: 8
-  part1: {fileID: 3090976993706893318, guid: c1396a502c2403643ab186ebcb125c16, type: 3}
-  part2: {fileID: 9193848333593907466, guid: 4a86557c0dd967346a7501d075e4bf3f, type: 3}
-  part3: {fileID: 432434579254219642, guid: 56c7905c151536e4d918f218fbf183a4, type: 3}
-  part4: {fileID: 919132149155446097, guid: 3019b8382ecddca4eac78283dcb117ff, type: 3}
+  small1: {fileID: 8393815375735470699, guid: ab9579d520d1c5a41bd36b60c6805361, type: 3}
+  small2: {fileID: 6432856078024430744, guid: 40c4803c60beac947a1782ca87f2004f, type: 3}
+  small3: {fileID: 5243247879577278322, guid: 3e73041ec3406d54f965b88e1ba10936, type: 3}
+  med1: {fileID: 1093337860737267548, guid: 867f2f8a7e640b948bfbf1e3ee9e46fd, type: 3}
+  med2: {fileID: 8658094031197577495, guid: 01d5976220893464d8932d2560cbcd7e, type: 3}
+  med3: {fileID: 4421123700089335525, guid: 461b0747b6440b5498de71d8a92be76a, type: 3}
+  full: {fileID: 8172989897794587619, guid: b06bb4111e8142442ae383ca49fded9f, type: 3}
+  box: {fileID: 8512071513386143989, guid: c4c12e236da4fac4dbd47c072fef2e5c, type: 3}
