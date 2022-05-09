@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
@@ -16,7 +17,7 @@ public class GameManager : Singleton<GameManager>
     public TextMeshProUGUI scrapCountText;
     public TextMeshProUGUI goldCountText;
 
-    private int factoryTier;
+    public int factoryTier;
 
 
     //lists of in-scene Fabricators and Conveyors
@@ -60,13 +61,16 @@ public class GameManager : Singleton<GameManager>
         touchControls = new PlayerInput();
         touchControls.Enable();
         StartValues();
+
         if (PlayerPrefs.HasKey("SaveCheck"))
         {
             LoadData();
         }
+
         StartCoroutine(IncrementScrap());
         StartCoroutine(StartUIUpdate());
         GetConveyors();
+        GetFabricators();
     }
 
 
@@ -104,14 +108,16 @@ public class GameManager : Singleton<GameManager>
 
 
 
+
     private void StartValues()
     {
+        factoryTier = 1;
         goldCount = 0f;
         producedCount = 0f;
         robotCost = 10f;
 
         scrapCap = 100f;
-        scrapCount = 20f;
+        scrapCount = 50f;
         scrapRecharge = 5F;
 
         foreach (GameObject conveyor in GameManager.instance.Conveyors)
@@ -125,6 +131,8 @@ public class GameManager : Singleton<GameManager>
         fabricatorSpeed = 1f;
 
         robotValue = 25f;
+
+        //SceneManager.LoadScene(factoryTier);
     }
 
 
@@ -132,6 +140,12 @@ public class GameManager : Singleton<GameManager>
     {
         Conveyors = new List<GameObject>();
         Conveyors = GameObject.FindGameObjectsWithTag("Conveyor").ToList();
+    }
+
+    private void GetFabricators()
+    {
+        Fabricators = new List<GameObject>();
+        Fabricators = GameObject.FindGameObjectsWithTag("Fabricator").ToList();
     }
 
 
@@ -177,18 +191,21 @@ public class GameManager : Singleton<GameManager>
 
     private void LoadData()
     {
-        scrapCap = PlayerPrefs.GetFloat("scrapCap");
-        scrapRecharge = PlayerPrefs.GetFloat("scrapRecharge");
+        factoryTier = PlayerPrefs.GetInt("factoryTier");
+
+        scrapCap = PlayerPrefs.GetFloat("scrapCapTier");
+        scrapRecharge = PlayerPrefs.GetFloat("scrapRechargeTier");
         goldCount = PlayerPrefs.GetFloat("goldCount");
         saveTime = PlayerPrefs.GetFloat("saveTime");
-        factoryTier = PlayerPrefs.GetInt("factoryTier");
-        conveyorSpeed = PlayerPrefs.GetFloat("conveyorSpeed");
-        fabricatorSpeed = PlayerPrefs.GetFloat("fabricatorSpeed");
-        robotValue = PlayerPrefs.GetFloat("robotValue");
+        conveyorSpeed = PlayerPrefs.GetFloat("conveyorTier");
+        fabricatorSpeed = PlayerPrefs.GetFloat("fabricatorTier");
+        robotValue = PlayerPrefs.GetFloat("robotTier");
         loadTime = Time.time;
         int loadResources = (int)loadTime - (int)saveTime;
         if (loadResources > 20f)
             goldCount = (loadResources - 20f) * robotValue;
+
+        //SceneManager.LoadScene(factoryTier);
     }
 
 
@@ -210,14 +227,14 @@ public class GameManager : Singleton<GameManager>
         SaveManager.instance.SaveGame(save);
         */
         PlayerPrefs.SetInt("SaveCheck", 1);
-        PlayerPrefs.SetFloat("scrapCap", scrapCap);
-        PlayerPrefs.SetFloat("scrapRecharge", scrapRecharge);
-        PlayerPrefs.SetFloat("goldCount", goldCount);
+        PlayerPrefs.SetFloat("scrapCapTier", scrapCap);
+        PlayerPrefs.SetFloat("scrapRechargeTier", scrapRecharge);
+        PlayerPrefs.SetFloat("goldCountTier", goldCount);
         PlayerPrefs.SetFloat("saveTime", saveTime);
         PlayerPrefs.SetInt("factoryTier", factoryTier);
-        PlayerPrefs.SetFloat("conveyorSpeed", conveyorSpeed);
-        PlayerPrefs.SetFloat("fabricatorSpeed", fabricatorSpeed);
-        PlayerPrefs.SetFloat("robotValue", robotValue);
+        PlayerPrefs.SetFloat("conveyorTier", conveyorSpeed);
+        PlayerPrefs.SetFloat("fabricatorTier", fabricatorSpeed);
+        PlayerPrefs.SetFloat("robotTier", robotValue);
         PlayerPrefs.Save();
     }
 

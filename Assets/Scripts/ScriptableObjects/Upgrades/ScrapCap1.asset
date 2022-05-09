@@ -24,7 +24,7 @@ MonoBehaviour:
   tierMod9: 0
   makeModifierMultiplicative: 0
   cost: 250
-  modifier: 1.5
+  modifier: 20
   isModifyingScrapCapacity: 1
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 0

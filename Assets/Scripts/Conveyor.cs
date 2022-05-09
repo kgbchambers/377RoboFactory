@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Conveyor : MonoBehaviour
 {
+    public List<float> speeds;
+
     public float speed;
+    public float tier;
     public bool isRotated;
     public bool isNegativeRotated;
     Rigidbody rBody;
