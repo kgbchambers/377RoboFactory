@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestroyThis : MonoBehaviour
 {
+    private Vector3 yOffset = new Vector3(0f, 3f, 0f);
+    public GameObject pe;
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Robot")
@@ -16,7 +18,8 @@ public class DestroyThis : MonoBehaviour
         yield return new WaitForSeconds(20f);
 		if (robo != null)
 		{
-			Destroy(robo);
+            Instantiate(pe, robo.transform.position + yOffset , Quaternion.identity);
+            Destroy(robo);
 		}
 	}
 }

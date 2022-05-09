@@ -120,8 +120,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6461486675240873335}
-  - component: {fileID: 7222159260720073745}
   - component: {fileID: 7222159260720073744}
+  - component: {fileID: 1962676458447830355}
   m_Layer: 0
   m_Name: r2_small_arm
   m_TagString: Robot
@@ -145,20 +145,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7222159260720073745
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222159260720073746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0072833295
-  m_Height: 0.031203171
-  m_Direction: 1
-  m_Center: {x: -0.0009937731, y: 0.0068870215, z: -0.000000012988078}
 --- !u!54 &7222159260720073744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -175,3 +161,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1962676458447830355
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222159260720073746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009999959, y: 0.03392286, z: 0.013677169}
+  m_Center: {x: 0, y: 0.00631472, z: -0.0018385872}

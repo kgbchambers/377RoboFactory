@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sell : MonoBehaviour
 {
+    public GameObject pe;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Robot")
@@ -19,9 +20,10 @@ public class Sell : MonoBehaviour
 	{
         yield return new WaitForSeconds(5f);
         GameManager.instance.addCash();
-        if (Robo !)
+        if (Robo != null)
 		{
-			Destroy(Robo.gameObject);
+            Instantiate(pe, Robo.transform.position, Quaternion.identity);
+            Destroy(Robo.gameObject);
 		}
 		
     }

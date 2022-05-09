@@ -206,8 +206,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7798572344951872973}
-  - component: {fileID: 6930785074934948355}
   - component: {fileID: 6930785074934948354}
+  - component: {fileID: 6167788611014827359}
   m_Layer: 0
   m_Name: r3_small_head
   m_TagString: Robot
@@ -231,19 +231,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6930785074934948355
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6930785074934948356}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.011435656
-  m_Center: {x: 4.7346702e-15, y: 0.0114357695, z: -0.000000012829453}
 --- !u!54 &6930785074934948354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -260,3 +247,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6167788611014827359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6930785074934948356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014505895, y: 0.016038634, z: 0.016416626}
+  m_Center: {x: -0.000551241, y: 0.012116954, z: 0.0007830068}
