@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Robot9
   m_EditorClassIdentifier: 
   tier: 9
-  part1: {fileID: 217488924559983502, guid: 964fd8ab74efcac42a06f46a56daf0d7, type: 3}
-  part2: {fileID: 3705421186100757701, guid: acb85d695b9c1464bb1600b7beecab2b, type: 3}
-  part3: {fileID: 5699638613726577569, guid: 8b966044292626042805a678cbf1814c, type: 3}
-  part4: {fileID: 919132149155446097, guid: 456655e974b2eb841a5c4766b94858ba, type: 3}
+  small1: {fileID: 8557846843673589864, guid: 3a38f413deefd3e4ab421ea6873e921e, type: 3}
+  small2: {fileID: 4749811206321948387, guid: 602cf516a272842458db1e42e6a941ce, type: 3}
+  small3: {fileID: 5672079459519560677, guid: 3ff17e5ca1f46074d82e331cc435d2ae, type: 3}
+  med1: {fileID: 5437923545968577412, guid: c39fb3a92a5860a48a255ef6fd658a06, type: 3}
+  med2: {fileID: 8908325133196936585, guid: 3d71e182f94f7a04e882dd7ff0259dff, type: 3}
+  med3: {fileID: 8863772701582919663, guid: aa8a50c4e2c5be54c85d6c1da6dddc20, type: 3}
+  full: {fileID: 6877948262364183646, guid: 13ed869417e26b94c8681a9441ebc944, type: 3}
+  box: {fileID: 8512071513386143989, guid: c4c12e236da4fac4dbd47c072fef2e5c, type: 3}
