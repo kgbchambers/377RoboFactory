@@ -610,7 +610,7 @@ PrefabInstance:
     - target: {fileID: 6956852589647245480, guid: 3bd8bb343eace1547b05287e25f8d469, type: 3}
       propertyPath: robotToProduce
       value: 
-      objectReference: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
+      objectReference: {fileID: 11400000, guid: c755478efdb41214dbbb45e8a498767d, type: 2}
     - target: {fileID: 7728994384104427251, guid: 3bd8bb343eace1547b05287e25f8d469, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -671,7 +671,7 @@ PrefabInstance:
     - target: {fileID: 2319112167094399221, guid: e52278b370398a24ba8f07b3cd112c8a, type: 3}
       propertyPath: robotToProduce
       value: 
-      objectReference: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
+      objectReference: {fileID: 11400000, guid: c755478efdb41214dbbb45e8a498767d, type: 2}
     - target: {fileID: 2657440272070549974, guid: e52278b370398a24ba8f07b3cd112c8a, type: 3}
       propertyPath: m_Name
       value: fab3_all (2)
@@ -736,7 +736,7 @@ PrefabInstance:
     - target: {fileID: 3627292024850155997, guid: 4b2743002a205b4479b2c410a389b9d7, type: 3}
       propertyPath: robotToProduce
       value: 
-      objectReference: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
+      objectReference: {fileID: 11400000, guid: c755478efdb41214dbbb45e8a498767d, type: 2}
     - target: {fileID: 7401306689205501187, guid: 4b2743002a205b4479b2c410a389b9d7, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -1061,7 +1061,7 @@ PrefabInstance:
     - target: {fileID: 2319112167094399221, guid: e52278b370398a24ba8f07b3cd112c8a, type: 3}
       propertyPath: robotToProduce
       value: 
-      objectReference: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
+      objectReference: {fileID: 11400000, guid: c755478efdb41214dbbb45e8a498767d, type: 2}
     - target: {fileID: 2657440272070549974, guid: e52278b370398a24ba8f07b3cd112c8a, type: 3}
       propertyPath: m_Name
       value: fab3_all (1)
@@ -1205,7 +1205,7 @@ PrefabInstance:
     - target: {fileID: 6956852589647245480, guid: 3bd8bb343eace1547b05287e25f8d469, type: 3}
       propertyPath: robotToProduce
       value: 
-      objectReference: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
+      objectReference: {fileID: 11400000, guid: c755478efdb41214dbbb45e8a498767d, type: 2}
     - target: {fileID: 7728994384104427251, guid: 3bd8bb343eace1547b05287e25f8d469, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -2704,7 +2704,7 @@ PrefabInstance:
     - target: {fileID: 703771603548694025, guid: 105bff9d5024d2540a6015049aad6d8d, type: 3}
       propertyPath: robotToProduce
       value: 
-      objectReference: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
+      objectReference: {fileID: 11400000, guid: c755478efdb41214dbbb45e8a498767d, type: 2}
     - target: {fileID: 2487600680484240356, guid: 105bff9d5024d2540a6015049aad6d8d, type: 3}
       propertyPath: m_Size.x
       value: 0.024296066
@@ -3007,7 +3007,7 @@ PrefabInstance:
     - target: {fileID: 2319112167094399221, guid: e52278b370398a24ba8f07b3cd112c8a, type: 3}
       propertyPath: robotToProduce
       value: 
-      objectReference: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
+      objectReference: {fileID: 11400000, guid: c755478efdb41214dbbb45e8a498767d, type: 2}
     - target: {fileID: 2657440272070549974, guid: e52278b370398a24ba8f07b3cd112c8a, type: 3}
       propertyPath: m_Name
       value: fab3_all
@@ -3553,7 +3553,7 @@ PrefabInstance:
     - target: {fileID: 703771603548694025, guid: 105bff9d5024d2540a6015049aad6d8d, type: 3}
       propertyPath: robotToProduce
       value: 
-      objectReference: {fileID: 11400000, guid: 3cd3535abff7b564d9954686c41bfbaf, type: 2}
+      objectReference: {fileID: 11400000, guid: c755478efdb41214dbbb45e8a498767d, type: 2}
     - target: {fileID: 4612382020817567786, guid: 105bff9d5024d2540a6015049aad6d8d, type: 3}
       propertyPath: m_Name
       value: fab4_all (2)
@@ -4763,6 +4763,7 @@ MonoBehaviour:
   scrapCount: 0
   scrapCap: 0
   scrapRecharge: 0
+  conveyorSpeed: 0
   truckCap: 0
   truckSpeed: 0
   fabricatorSpeed: 0
