@@ -9,12 +9,24 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/HelloWorld.unity
-    guid: 1e8ce379e38042f4b967a32a4f0d4024
-  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/LaunchScene.unity
+    guid: d8a1d0d0bc9c0704eb6157858d9391f0
+  - enabled: 1
     path: Assets/Scenes/factory1.unity
-    guid: 1089e44fd3d33494fb72d641743f1edf
+    guid: ea2cae442a0c24d49837a01cc40a26db
+  - enabled: 1
+    path: Assets/Scenes/factory2.unity
+    guid: 3cdddffab8c0dec42b1cca62f136e56e
   - enabled: 1
     path: Assets/Scenes/factory3.unity
     guid: 6116927671550dc40a413cb9a7f6ba07
+  - enabled: 1
+    path: Assets/Scenes/factory4.unity
+    guid: fae3383c3153e02428ddb8d819d26ebe
+  - enabled: 1
+    path: Assets/Scenes/factory5.unity
+    guid: 7dc500eb9608d71478a3dfd6ac404d93
   m_configObjects: {}

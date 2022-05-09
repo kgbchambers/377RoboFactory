@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f10262cd3b8809c42bb482251876d36d, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -6205,6 +6205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fd7c5ceaffda5428061f20f034ee57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDestroyedOnLoad: 0
   upgrades:
   - {fileID: 11400000, guid: 960c1f31ee9890440a45264eff0d78c5, type: 2}
   - {fileID: 11400000, guid: 9ec9d64f0eb9b0e498be7b86197f50cc, type: 2}
@@ -6671,8 +6672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf3b10c96ee5a3479860e4cddd7869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDestroyedOnLoad: 1
   scrapCountText: {fileID: 3342283790819753219}
   goldCountText: {fileID: 3342283790457013767}
+  factoryTier: 0
   Fabricators:
   - {fileID: 1864291310}
   - {fileID: 212947359}
@@ -6763,6 +6766,7 @@ MonoBehaviour:
   scrapCount: 0
   scrapCap: 0
   scrapRecharge: 0
+  conveyorSpeed: 0
   truckCap: 0
   truckSpeed: 0
   fabricatorSpeed: 0

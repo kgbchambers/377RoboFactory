@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 547a160b7e3a99242a8d6cc549ef93c6, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -656,7 +656,7 @@ RectTransform:
   - {fileID: 1157481362}
   - {fileID: 755890121}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1523,7 +1523,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &925030287
 PrefabInstance:
@@ -1612,7 +1612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1157481362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2601,6 +2601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fd7c5ceaffda5428061f20f034ee57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDestroyedOnLoad: 0
   upgrades:
   - {fileID: 11400000, guid: 960c1f31ee9890440a45264eff0d78c5, type: 2}
   - {fileID: 11400000, guid: 9ec9d64f0eb9b0e498be7b86197f50cc, type: 2}
@@ -2818,8 +2819,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf3b10c96ee5a3479860e4cddd7869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDestroyedOnLoad: 1
   scrapCountText: {fileID: 2116844066}
   goldCountText: {fileID: 778608447}
+  factoryTier: 0
   Fabricators:
   - {fileID: 202475514}
   - {fileID: 279835402}
@@ -2834,6 +2837,7 @@ MonoBehaviour:
   scrapCount: 0
   scrapCap: 0
   scrapRecharge: 0
+  conveyorSpeed: 0
   truckCap: 0
   truckSpeed: 0
   fabricatorSpeed: 0

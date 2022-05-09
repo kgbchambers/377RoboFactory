@@ -96,14 +96,14 @@ public class UpgradeManager : Singleton<UpgradeManager>
             {
                 foreach (GameObject conveyor in GameManager.instance.Conveyors)
                 {
-                    conveyor.GetComponent<Conveyor>().speed *= mod;
+                    conveyor.GetComponent<Conveyor>().tier++;
                 }
             }
             else if (op == "+ ")
             {
                 foreach (GameObject conveyor in GameManager.instance.Conveyors)
                 {
-                    conveyor.GetComponent<Conveyor>().speed += mod;
+                    conveyor.GetComponent<Conveyor>().tier++;
                 }
             }
         }
