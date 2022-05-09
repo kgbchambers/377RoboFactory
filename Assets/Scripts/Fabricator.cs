@@ -35,6 +35,7 @@ public class Fabricator : MonoBehaviour
         StartCoroutine(FabricatorQueue());
     }
 
+
     public void buildRobot()
     {
         if (processNumber == 1)

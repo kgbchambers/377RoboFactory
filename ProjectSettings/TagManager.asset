@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Robot
   - Conveyor
+  - Selling
   layers:
   - Default
   - TransparentFX
