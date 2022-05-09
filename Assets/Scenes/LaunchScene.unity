@@ -155,7 +155,7 @@ MonoBehaviour:
   IsDestroyedOnLoad: 1
   scrapCountText: {fileID: 196436747}
   goldCountText: {fileID: 196436748}
-  factoryTier: 0
+  factoryTier: 1
   Fabricators: []
   Conveyors: []
   goldCount: 0

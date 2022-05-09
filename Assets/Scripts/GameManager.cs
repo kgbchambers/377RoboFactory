@@ -211,21 +211,21 @@ public class GameManager : Singleton<GameManager>
 
     private void SaveData()
     {
-        /*
-    public float scrapCount;
-    public float gold;
-    public float saveTime;
-    public float factoryTier;
-    public float conveyorTier;
-    public float fabricatorTier;
-    public float robotTier;
-    public float scrapCapTier;
-    public float scrapRechargeTier;
+    /*
+        public float scrapCount;
+        public float gold;
+        public float saveTime;
+        public float factoryTier;
+        public float conveyorTier;
+        public float fabricatorTier;
+        public float robotTier;
+        public float scrapCapTier;
+        public float scrapRechargeTier;
         save.scrapCount = scrapCount;
         save.cashCount = cashCount;
         save.saveTime = Time.time;
         SaveManager.instance.SaveGame(save);
-        */
+    */
         PlayerPrefs.SetInt("SaveCheck", 1);
         PlayerPrefs.SetFloat("scrapCapTier", scrapCap);
         PlayerPrefs.SetFloat("scrapRechargeTier", scrapRecharge);
