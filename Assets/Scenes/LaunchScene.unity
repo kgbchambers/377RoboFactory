@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDestroyedOnLoad: 1
   goldRequiredForFactory: 1e+9
-  factoryUpgradeButton: {fileID: 0}
+  factoryUpgradeButton: {fileID: 1717153112}
   scrapCountText: {fileID: 3342283789884397024}
   goldCountText: {fileID: 3342283791392370404}
   factoryTier: 1

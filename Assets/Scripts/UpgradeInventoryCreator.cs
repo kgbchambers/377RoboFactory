@@ -17,7 +17,7 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
     private string modName;
 
     private int conveyorTier;
-    private int robotTier;
+    private int robotValue;
     private int fabricatorTier;
     private int scrapRechargeTier;
     private int scrapCapTier;
@@ -35,7 +35,7 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
             PlayerPrefs.SetInt("scrapCapTier", scrapCapTier);
             PlayerPrefs.SetInt("conveyorTier", conveyorTier);
             PlayerPrefs.SetInt("fabricatorTier", fabricatorTier);
-            PlayerPrefs.SetInt("robotTier", robotTier);
+            PlayerPrefs.SetInt("robotValue", robotValue);
             PlayerPrefs.Save();
         }
         else
@@ -44,7 +44,7 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
             scrapCapTier = PlayerPrefs.GetInt("scrapCapTier");
             conveyorTier = PlayerPrefs.GetInt("conveyorTier");
             fabricatorTier = PlayerPrefs.GetInt("fabricatorTier");
-            robotTier = PlayerPrefs.GetInt("robotTier");
+            robotValue = PlayerPrefs.GetInt("robotValue");
         }
 
         
@@ -81,7 +81,7 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
 
     IEnumerator CreateInventory()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.5f);
         foreach (Upgrade upgrade in UpgradeManager.instance.upgrades)
         {
                 GameObject instance = Instantiate(ButtonPref, ButtonContainer);
@@ -89,7 +89,7 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
                 UpgradeItem upgradeItem = instance.GetComponent<UpgradeItem>();
                 upgradeItem.upgrade = upgrade;
                 upgradeItem.NameText.text = "" + upgrade.upgradeName;
-                upgradeItem.CostText.text = "" + upgrade.cost;
+                
 
                 if (upgradeItem.upgrade.makeModifierMultiplicative)
                     op = "x ";
@@ -109,8 +109,10 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
                 else if (upgradeItem.upgrade.isModifyingConveyorSpeed)
                 {
                     modName = " conveyor speed";
+                    if (conveyorTier >= 0 && conveyorTier <= 9)
+                        upgradeItem.CostText.text = "" + (upgrade.cost * conveyorTier);
                     upgradeItem.upgrade.modifier = 1f;
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeConveyorSpeed(op, upgrade.modifier, upgrade.cost, instance); });
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeConveyorSpeed(op, upgrade.modifier, upgrade.cost * conveyorTier, instance); });
 
                 }
                 else if (upgradeItem.upgrade.isModifyingFabricatorSpeed)

@@ -9,6 +9,7 @@ using UnityEngine.UI;
 using TMPro;
 
 
+
 public class GameManager : Singleton<GameManager>
 {
     [Header("Gold required for next factory")]
@@ -67,11 +68,11 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        factoryTier = 1;
         factoryUpgradeButton = GameObject.FindGameObjectWithTag("FactoryButton");
         goldReached = false;
         IsDestroyedOnLoad = true;
 
-        factoryTier = 1;
         factoryUpgradeButton.gameObject.SetActive(false);
 
         touchControls = new PlayerInput();
@@ -90,6 +91,7 @@ public class GameManager : Singleton<GameManager>
         GetConveyors();
         GetFabricators();
         LoadData();
+        //Debug.Log(conveyorTier);
     }
 
 
@@ -163,7 +165,7 @@ public class GameManager : Singleton<GameManager>
 
     IEnumerator SwapScene()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(factoryTier);
     }
 
@@ -217,10 +219,18 @@ public class GameManager : Singleton<GameManager>
 
     public void ApplyConveyorSpeeds()
     {
+        /*
         foreach (GameObject conveyor in Conveyors)
         {
             conveyor.GetComponent<Conveyor>().speed = speeds[curConveyorTier - 1];
         }
+        */
+
+        foreach (GameObject conveyor in Conveyors)
+        {
+            conveyor.GetComponent<Conveyor>().speed = speeds[conveyorTier - 1];
+        }
+
     }
 
 
@@ -289,6 +299,7 @@ public class GameManager : Singleton<GameManager>
         robotValue = PlayerPrefs.GetFloat("robotValue");
         loadTime = Time.time;
         float loadResources = loadTime - saveTime;
+   
         if (loadResources > 20f)
             goldCount = (loadResources - 20f) * robotValue;
 

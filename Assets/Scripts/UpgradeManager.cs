@@ -71,6 +71,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
         yield return new WaitForSeconds(0.5f);
         GameManager.instance.speeds = tempSpeeds;
         GameManager.instance.curConveyorTier = GameManager.instance.conveyorTier;
+        GameManager.instance.ApplyConveyorSpeeds();
 
 
     }
