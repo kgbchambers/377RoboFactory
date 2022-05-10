@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class UpgradeManager : Singleton<UpgradeManager>
 {
+    public List<GameObject> upgradeButtons;
     public List<Upgrade> upgrades;
+    public List<float> tempSpeeds;
+
     private int conveyorTier;
     private int robotTier;
     private int fabricatorTier;
@@ -13,8 +17,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
     private int scrapCapTier;
 
 
+
+
     private void Start()
     {
+        IsDestroyedOnLoad = true;
         if (!PlayerPrefs.HasKey("SaveCheck"))
         {
             PlayerPrefs.SetInt("SaveCheck", 1);
@@ -33,13 +40,38 @@ public class UpgradeManager : Singleton<UpgradeManager>
             fabricatorTier = PlayerPrefs.GetInt("fabricatorTier");
             robotTier = PlayerPrefs.GetInt("robotTier");
         }
+        tempSpeeds = new List<float>();
 
         foreach (Upgrade upgrade in upgrades)
         {
-            //upgrade.cost =
+            if (upgrade.isModifyingConveyorSpeed)
+            {
+                tempSpeeds.Add(upgrade.tierMod1);
+                tempSpeeds.Add(upgrade.tierMod2);
+                tempSpeeds.Add(upgrade.tierMod3);
+                tempSpeeds.Add(upgrade.tierMod4);
+                tempSpeeds.Add(upgrade.tierMod5);
+                tempSpeeds.Add(upgrade.tierMod6);
+                tempSpeeds.Add(upgrade.tierMod7);
+                tempSpeeds.Add(upgrade.tierMod8);
+                tempSpeeds.Add(upgrade.tierMod9);
+            }
         }
 
+        //GameManager.instance.speeds = tempSpeeds;
+
+        StartCoroutine(SetManagerSpeeds());
         upgrades = upgrades.OrderBy(up => up.cost).ToList();
+
+    }
+
+    
+    public IEnumerator SetManagerSpeeds()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameManager.instance.speeds = tempSpeeds;
+        GameManager.instance.curConveyorTier = GameManager.instance.conveyorTier;
+
 
     }
 
@@ -52,7 +84,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
 
 
-    public void UpgradeScrapCap(string op, float mod, float cost)
+    public void UpgradeScrapCap(string op, float mod, float cost, GameObject buttonToDoom)
     {
         if (GameManager.instance.spendCash(cost))
         {
@@ -64,6 +96,12 @@ public class UpgradeManager : Singleton<UpgradeManager>
             {
                 GameManager.instance.scrapCap += mod;
             }
+            //upgradeButtons.Remove(buttonToDoom);
+            //Destroy(buttonToDoom);
+            //UpgradeInventoryCreator.instance.upgradeCount--;
+            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
+            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeScrapCap(op, mod * 2, cost * 2, buttonToDoom); });
+
         }
 
 
@@ -71,7 +109,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
 
 
-    public void UpgradeScrapRecharge(string op, float mod, float cost)
+    public void UpgradeScrapRecharge(string op, float mod, float cost, GameObject buttonToDoom)
     {
         if (GameManager.instance.spendCash(cost))
         {
@@ -83,67 +121,37 @@ public class UpgradeManager : Singleton<UpgradeManager>
             {
                 GameManager.instance.scrapRecharge += mod;
             }
+            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
+            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeScrapRecharge(op, mod * 2, cost * 2, buttonToDoom); });
+
         }
     }
 
 
 
-    public void UpgradeConveyorSpeed(string op, float mod, float cost)
+
+    public void UpgradeConveyorSpeed(string op, float mod, float cost, GameObject buttonToDoom)
     {
         if (GameManager.instance.spendCash(cost))
         {
             if (op == "x ")
             {
-                foreach (GameObject conveyor in GameManager.instance.Conveyors)
-                {
-                    conveyor.GetComponent<Conveyor>().tier++;
-                }
+                GameManager.instance.UpgradeConveyor();
             }
             else if (op == "+ ")
             {
-                foreach (GameObject conveyor in GameManager.instance.Conveyors)
-                {
-                    conveyor.GetComponent<Conveyor>().tier++;
-                }
+                GameManager.instance.UpgradeConveyor();
+               
             }
+            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
+            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeConveyorSpeed(op, mod * 2, cost * 2, buttonToDoom); });
+
         }
     }
 
 
 
-    public void UpgradeTruckCap(string op, float mod, float cost)
-    {
-        if (GameManager.instance.spendCash(cost))
-        {
-            if (op == "x ")
-            {
-                GameManager.instance.truckCap *= mod;
-            }
-            else if (op == "+ ")
-            {
-                GameManager.instance.truckCap += mod;
-            }
-        }
-    }
-
-
-
-    public void UpgradeTruckSpeed(string op, float mod, float cost)
-    {
-        if (GameManager.instance.spendCash(cost))
-        {
-            if (op == "x ")
-            {
-                GameManager.instance.truckSpeed *= mod;
-            }
-            else if (op == "+ ")
-            {
-                GameManager.instance.truckSpeed += mod;
-            }
-        }
-    }
-
-    public void UpgradeFabricatorSpeed(string op, float mod, float cost)
+    public void UpgradeFabricatorSpeed(string op, float mod, float cost, GameObject buttonToDoom)
     {
         if (GameManager.instance.spendCash(cost))
         {
@@ -161,10 +169,13 @@ public class UpgradeManager : Singleton<UpgradeManager>
                     fabricator.GetComponent<Fabricator>().speed += mod;
                 }
             }
+            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
+            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeFabricatorSpeed(op, mod * 2, cost * 2, buttonToDoom); });
+
         }
     }
 
-    public void UpgradeRobotValue(string op, float mod, float cost)
+    public void UpgradeRobotValue(string op, float mod, float cost, GameObject buttonToDoom)
     {
         if (GameManager.instance.spendCash(cost))
         {
@@ -176,6 +187,9 @@ public class UpgradeManager : Singleton<UpgradeManager>
             {
                 GameManager.instance.robotValue += mod;
             }
+            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
+            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeRobotValue(op, mod * 2, cost * 2, buttonToDoom); });
+
         }
     }
 

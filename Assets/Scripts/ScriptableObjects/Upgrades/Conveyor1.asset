@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Conveyor1
   m_EditorClassIdentifier: 
   upgradeName: Upgraded belts
-  tierMod1: 0.4
-  tierMod2: 0
-  tierMod3: 0
-  tierMod4: 0
-  tierMod5: 0
-  tierMod6: 0
-  tierMod7: 0
-  tierMod8: 0
-  tierMod9: 0
+  tierMod1: 0.6
+  tierMod2: 0.8
+  tierMod3: 1
+  tierMod4: 1.1
+  tierMod5: 1.3
+  tierMod6: 1.5
+  tierMod7: 1.8
+  tierMod8: 2
+  tierMod9: 3
   makeModifierMultiplicative: 0
   cost: 750
-  modifier: 0.5
+  modifier: 1
   isModifyingScrapCapacity: 0
   isModifyingScrapRecharge: 0
   isModifyingConveyorSpeed: 1

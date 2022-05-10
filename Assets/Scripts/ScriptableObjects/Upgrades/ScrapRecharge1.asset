@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: ScrapRecharge1
   m_EditorClassIdentifier: 
   upgradeName: Scrap Generator
-  tier: 1
-  modifier: 5
+  tierMod1: 1
+  tierMod2: 3
+  tierMod3: 5
+  tierMod4: 8
+  tierMod5: 10
+  tierMod6: 15
+  tierMod7: 20
+  tierMod8: 25
+  tierMod9: 50
   makeModifierMultiplicative: 0
   cost: 250
+  modifier: 5
   isModifyingScrapCapacity: 0
   isModifyingScrapRecharge: 1
   isModifyingConveyorSpeed: 0

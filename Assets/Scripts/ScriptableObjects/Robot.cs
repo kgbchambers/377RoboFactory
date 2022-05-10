@@ -4,7 +4,6 @@ using UnityEngine;
 public class Robot : ScriptableObject
 {
     public int tier;
-    private int productionLevel = 0;
 
     public GameObject small1;
     public GameObject small2;
