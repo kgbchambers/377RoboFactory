@@ -107,7 +107,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000005587934, y: 0.032121476, z: 0.000000004642433}
+  m_ConnectedAnchor: {x: 0, y: 0.032121494, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 340120594353212128}
   - component: {fileID: 2862972979056494162}
-  - component: {fileID: 2862972979056494158}
+  - component: {fileID: 7421353469262923291}
   m_Layer: 0
   m_Name: r5_med_leg
   m_TagString: Robot
@@ -470,8 +470,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &2862972979056494158
-CapsuleCollider:
+--- !u!65 &7421353469262923291
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -480,7 +480,6 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.004777999
-  m_Height: 0.029660579
-  m_Direction: 1
-  m_Center: {x: -0.00024919352, y: 0.014830289, z: -3.3354514e-10}
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.032140717, z: 0.01}
+  m_Center: {x: 0, y: 0.011070347, z: 0}

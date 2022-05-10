@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2481618362076865402}
   - component: {fileID: 1871316497352433352}
-  - component: {fileID: 1871316497352433355}
+  - component: {fileID: 7272576266047295266}
   m_Layer: 0
   m_Name: r5_small_arm
   m_TagString: Robot
@@ -50,8 +50,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1871316497352433355
-CapsuleCollider:
+--- !u!65 &7272576266047295266
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -60,10 +60,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.0026383514
-  m_Height: 0.026327573
-  m_Direction: 1
-  m_Center: {x: 0.00039667144, y: 0.013163792, z: -1.3782145e-10}
+  serializedVersion: 2
+  m_Size: {x: 0.006350155, y: 0.034645706, z: 0.018870309}
+  m_Center: {x: -0.00017081488, y: 0.014823649, z: -0.00016553204}
 --- !u!1 &3150888164912626508
 GameObject:
   m_ObjectHideFlags: 0
