@@ -41,9 +41,9 @@ public class GameManager : Singleton<GameManager>
     private float loadTime;
 
     //current cash variable
-    public float goldCount = 0;
-    public float goldTemp = 0;
-    public float scrapCount = 50;
+    public float goldCount;
+    public float goldTemp;
+    public float scrapCount;
 
     //variables for cost of items
     private float robotCost = 10f;
@@ -70,14 +70,15 @@ public class GameManager : Singleton<GameManager>
         factoryUpgradeButton = GameObject.FindGameObjectWithTag("FactoryButton");
         goldReached = false;
         IsDestroyedOnLoad = true;
+
         factoryTier = 1;
-        curConveyorTier = 0;
         factoryUpgradeButton.gameObject.SetActive(false);
 
         touchControls = new PlayerInput();
         touchControls.Enable();
         speeds = new List<float>();
         StartValues();
+
         if (PlayerPrefs.HasKey("SaveCheck"))
         {
             LoadData();
@@ -88,7 +89,7 @@ public class GameManager : Singleton<GameManager>
         StartCoroutine(GoldCheck());
         GetConveyors();
         GetFabricators();
-        
+        LoadData();
     }
 
 
@@ -114,6 +115,14 @@ public class GameManager : Singleton<GameManager>
                 goldReached = true;
                 factoryUpgradeButton.gameObject.SetActive(true);
             }
+        if(goldCount == 0)
+            {
+                if (PlayerPrefs.HasKey("SaveCheck"))
+                {
+                    LoadData();
+                }
+            }
+            
         }
        
     }
@@ -156,8 +165,6 @@ public class GameManager : Singleton<GameManager>
     {
         yield return new WaitForEndOfFrame();
         SceneManager.LoadScene(factoryTier);
-
-
     }
 
     private void StartValues()
@@ -181,7 +188,10 @@ public class GameManager : Singleton<GameManager>
         fabricatorSpeed = 1f;
 
         robotValue = 25f;
-
+        if (PlayerPrefs.HasKey("SaveCheck"))
+        {
+            LoadData();
+        }
     }
 
 
@@ -266,7 +276,7 @@ public class GameManager : Singleton<GameManager>
 
 
 
-    private void LoadData()
+    public void LoadData()
     {
         factoryTier = PlayerPrefs.GetInt("factoryTier");
 
@@ -278,11 +288,10 @@ public class GameManager : Singleton<GameManager>
         fabricatorSpeed = PlayerPrefs.GetFloat("fabricatorTier");
         robotValue = PlayerPrefs.GetFloat("robotValue");
         loadTime = Time.time;
-        int loadResources = (int)loadTime - (int)saveTime;
+        float loadResources = loadTime - saveTime;
         if (loadResources > 20f)
             goldCount = (loadResources - 20f) * robotValue;
 
-        //SceneManager.LoadScene(factoryTier);
     }
 
 
@@ -293,7 +302,7 @@ public class GameManager : Singleton<GameManager>
         PlayerPrefs.SetInt("SaveCheck", 1);
         PlayerPrefs.SetFloat("scrapCapTier", scrapCap);
         PlayerPrefs.SetFloat("scrapRechargeTier", scrapRecharge);
-        PlayerPrefs.SetFloat("goldCountTier", goldCount);
+        PlayerPrefs.SetFloat("goldCount", goldCount);
         PlayerPrefs.SetFloat("saveTime", saveTime);
         PlayerPrefs.SetInt("factoryTier", factoryTier);
         PlayerPrefs.SetInt("conveyorTier", conveyorTier);
