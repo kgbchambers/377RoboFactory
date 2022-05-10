@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1159051423131248401}
-  - component: {fileID: 677117682382876480}
   - component: {fileID: 677117682382876481}
   - component: {fileID: 677117682382876478}
+  - component: {fileID: 4362856073531395773}
   m_Layer: 0
   m_Name: Forearm.L
   m_TagString: Untagged
@@ -35,20 +35,6 @@ Transform:
   m_Father: {fileID: 6952870150519381117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &677117682382876480
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677117682382876479}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0044330503
-  m_Height: 0.024371086
-  m_Direction: 1
-  m_Center: {x: 0.00016992052, y: 0.012185505, z: -9.952276e-13}
 --- !u!54 &677117682382876481
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -111,6 +97,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &4362856073531395773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677117682382876479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0071883267, y: 0.021690134, z: 0.01}
+  m_Center: {x: 0.000165913, y: 0.0119038345, z: -1.2238764e-12}
 --- !u!1 &718617871002395460
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,8 +347,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6952870150519381117}
-  - component: {fileID: 5348175129473319242}
   - component: {fileID: 5348175129473319240}
+  - component: {fileID: 7324004176392570907}
   m_Layer: 0
   m_Name: r3_med_arm
   m_TagString: Robot
@@ -373,20 +372,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &5348175129473319242
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5348175129473319241}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0046266103
-  m_Height: 0.023564659
-  m_Direction: 1
-  m_Center: {x: 0.0010292616, y: 0.011782217, z: -4.2971304e-10}
 --- !u!54 &5348175129473319240
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -403,6 +388,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7324004176392570907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348175129473319241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009832029, y: 0.02943213, z: 0.01}
+  m_Center: {x: 0.0004061798, y: 0.009716069, z: 0}
 --- !u!1 &6817334112672875700
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9196978495022144721}
-  - component: {fileID: 100758361248003625}
   - component: {fileID: 100758361248003799}
+  - component: {fileID: 6652475448371991315}
   m_Layer: 0
   m_Name: r3_med_leg
   m_TagString: Robot
@@ -34,20 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &100758361248003625
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100758361248003796}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0059126783
-  m_Height: 0.03146371
-  m_Direction: 1
-  m_Center: {x: 0.0013689967, y: 0.0149730705, z: 2.4254208e-11}
 --- !u!54 &100758361248003799
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64,6 +50,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6652475448371991315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100758361248003796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.0347705, z: 0.01}
+  m_Center: {x: 0, y: 0.012385265, z: 0}
 --- !u!1 &110941732503440061
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,9 +267,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2998682371203001385}
-  - component: {fileID: 4320923870642526296}
   - component: {fileID: 4320923870642526297}
   - component: {fileID: 4320923870642526278}
+  - component: {fileID: 1332822442954993911}
   m_Layer: 0
   m_Name: shin.R
   m_TagString: Untagged
@@ -294,20 +293,6 @@ Transform:
   m_Father: {fileID: 9196978495022144721}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &4320923870642526296
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4320923870642526279}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.005234452
-  m_Height: 0.02716738
-  m_Direction: 1
-  m_Center: {x: -0.0005005217, y: 0.013583625, z: -3.2334033e-10}
 --- !u!54 &4320923870642526297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -336,7 +321,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.3902797e-14, y: 0.03212151, z: 4.71337e-10}
+  m_ConnectedAnchor: {x: -6.3496436e-13, y: 0.0321215, z: 1.2335021e-13}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -370,6 +355,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &1332822442954993911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4320923870642526279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.025602568, z: 0.01}
+  m_Center: {x: -8.767378e-18, y: 0.013389299, z: 7.336835e-11}
 --- !u!1 &6171818800149881173
 GameObject:
   m_ObjectHideFlags: 0
