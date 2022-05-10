@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Fabricator1
   m_EditorClassIdentifier: 
   upgradeName: Fabricator Materials
-  tierMod1: 0
-  tierMod2: 0
-  tierMod3: 0
-  tierMod4: 0
-  tierMod5: 0
-  tierMod6: 0
-  tierMod7: 0
-  tierMod8: 0
-  tierMod9: 0
+  tierMod1: 0.1
+  tierMod2: 0.2
+  tierMod3: 0.3
+  tierMod4: 0.4
+  tierMod5: 0.5
+  tierMod6: 0.6
+  tierMod7: 0.8
+  tierMod8: 1.2
+  tierMod9: 1.8
   makeModifierMultiplicative: 0
   cost: 500
   modifier: 1

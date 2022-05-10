@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Conveyor : MonoBehaviour
 {
-    public List<float> speeds;
-
     public float speed;
-    public float tier;
+
     public bool isRotated;
     public bool isNegativeRotated;
     Rigidbody rBody;
+
 
     void Start()
     {
@@ -30,4 +29,5 @@ public class Conveyor : MonoBehaviour
             rBody.position += Vector3.left * speed * Time.fixedDeltaTime;
         rBody.MovePosition(pos);
     }
+
 }

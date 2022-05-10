@@ -158,11 +158,13 @@ MonoBehaviour:
   factoryTier: 1
   Fabricators: []
   Conveyors: []
+  speeds: []
+  curConveyorTier: 0
+  conveyorTier: 0
   goldCount: 0
   scrapCount: 0
   scrapCap: 0
   scrapRecharge: 0
-  conveyorSpeed: 0
   truckCap: 0
   truckSpeed: 0
   fabricatorSpeed: 0
@@ -291,6 +293,10 @@ PrefabInstance:
     - target: {fileID: 3342283791439807198, guid: d3d0dd6570fcf4c45a0e9accdfc6058f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342283791439807199, guid: d3d0dd6570fcf4c45a0e9accdfc6058f, type: 3}
+      propertyPath: IsDestroyedOnLoad
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3d0dd6570fcf4c45a0e9accdfc6058f, type: 3}
@@ -554,7 +560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fd7c5ceaffda5428061f20f034ee57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDestroyedOnLoad: 0
+  IsDestroyedOnLoad: 1
+  upgradeButtons: []
   upgrades:
   - {fileID: 11400000, guid: d6177ac75fbd62146b0c3ea289503075, type: 2}
   - {fileID: 11400000, guid: 617bfd61d7c421a4082b5cc5ef4f1e09, type: 2}
@@ -562,6 +569,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: befa4338292eb7f489dfc79476e37bb9, type: 2}
   - {fileID: 11400000, guid: 9ec9d64f0eb9b0e498be7b86197f50cc, type: 2}
   - {fileID: 11400000, guid: 960c1f31ee9890440a45264eff0d78c5, type: 2}
+  tempSpeeds: []
 --- !u!4 &1272343042
 Transform:
   m_ObjectHideFlags: 0

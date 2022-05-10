@@ -7,7 +7,6 @@ public class Upgrade : ScriptableObject
 
     public string upgradeName;
     [Header("Upgrade amount (additive)")]
-
     public float tierMod1;
     public float tierMod2;
     public float tierMod3;
