@@ -123,7 +123,7 @@ public class Fabricator : MonoBehaviour
                             othersRB = part.GetComponent<Rigidbody>();
                         }
 
-                        othersRB.AddForce((spawnLocation.right*4) + (spawnLocation.up / 4) * (spawnPower + 8), ForceMode.VelocityChange);
+                        othersRB.AddForce((spawnLocation.right*4) + (spawnLocation.up / 4) * (spawnPower + 12), ForceMode.VelocityChange);
 
                         //animate the fabricator after spawning part
                         animator.SetTrigger("trigger");
@@ -153,7 +153,7 @@ public class Fabricator : MonoBehaviour
                         part = Instantiate(robotToProduce.box, spawnLocation.position, Quaternion.identity);
 
                         othersRB = part.GetComponent<Rigidbody>();
-                        othersRB.AddForce((spawnLocation.right*2) + (spawnLocation.up / 8) * (spawnPower + 20), ForceMode.VelocityChange);
+                        othersRB.AddForce((spawnLocation.right*4) + (spawnLocation.up / 16) * (spawnPower + 40), ForceMode.VelocityChange);
 
                         //animate the fabricator after spawning part
                         animator.SetTrigger("trigger");
