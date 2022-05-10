@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7787179644817152724}
   - component: {fileID: 6312256745520637800}
-  - component: {fileID: 6312256745520637801}
+  - component: {fileID: 9131182939507914910}
   m_Layer: 0
   m_Name: r7_small_arm
   m_TagString: Robot
@@ -163,8 +163,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &6312256745520637801
-CapsuleCollider:
+--- !u!65 &9131182939507914910
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -173,10 +173,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.0018341391
-  m_Height: 0.02150932
-  m_Direction: 1
-  m_Center: {x: 0.00021812755, y: 0.010754651, z: -1.4482782e-10}
+  serializedVersion: 2
+  m_Size: {x: 0.0043499516, y: 0.026819006, z: 0.01}
+  m_Center: {x: 0.000046697798, y: 0.011364481, z: 0}
 --- !u!1 &7339689231483028194
 GameObject:
   m_ObjectHideFlags: 0

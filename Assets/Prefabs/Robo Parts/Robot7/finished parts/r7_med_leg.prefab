@@ -318,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 41520598230199457}
   - component: {fileID: 8723898060986833192}
-  - component: {fileID: 8723898060986833195}
+  - component: {fileID: 9195011606270556757}
   - component: {fileID: 8723898060986833190}
   m_Layer: 0
   m_Name: shin.R
@@ -359,8 +359,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &8723898060986833195
-CapsuleCollider:
+--- !u!65 &9195011606270556757
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -369,10 +369,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.004306515
-  m_Height: 0.033969585
-  m_Direction: 1
-  m_Center: {x: -2.0314557e-10, y: 0.016984776, z: -0.00052971306}
+  serializedVersion: 2
+  m_Size: {x: 0.010000001, y: 0.029118864, z: 0.01}
+  m_Center: {x: 9.01315e-18, y: 0.015189563, z: -1.3421843e-12}
 --- !u!144 &8723898060986833190
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -385,7 +384,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000018626439, y: 0.032121476, z: 0.000000005314094}
+  m_ConnectedAnchor: {x: -6.3496425e-13, y: 0.032121494, z: 1.2335021e-13}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -429,7 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5134046319748528936}
   - component: {fileID: 8723898060986833193}
-  - component: {fileID: 8723898060986833197}
+  - component: {fileID: 7267919451714684750}
   m_Layer: 0
   m_Name: r7_med_leg
   m_TagString: Robot
@@ -469,8 +468,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &8723898060986833197
-CapsuleCollider:
+--- !u!65 &7267919451714684750
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -479,7 +478,6 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.0044030813
-  m_Height: 0.032121476
-  m_Direction: 1
-  m_Center: {x: 0.0007060664, y: 0.01606074, z: -2.4717509e-10}
+  serializedVersion: 2
+  m_Size: {x: 0.010000001, y: 0.030165415, z: 0.01}
+  m_Center: {x: 0, y: 0.013345065, z: 0}
