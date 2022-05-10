@@ -21,6 +21,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     private void Start()
     {
+        IsDestroyedOnLoad = true;
         if (!PlayerPrefs.HasKey("SaveCheck"))
         {
             PlayerPrefs.SetInt("SaveCheck", 1);

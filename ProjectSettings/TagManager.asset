@@ -8,6 +8,7 @@ TagManager:
   - Conveyor
   - Selling
   - Fabricator
+  - FactoryButton
   layers:
   - Default
   - TransparentFX

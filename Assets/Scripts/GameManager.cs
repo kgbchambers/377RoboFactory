@@ -11,6 +11,11 @@ using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
+    [Header("Gold required for next factory")]
+    public float goldRequiredForFactory;
+    public GameObject factoryUpgradeButton;
+
+
     private PlayerInput touchControls;
     private float timer;
 
@@ -18,7 +23,7 @@ public class GameManager : Singleton<GameManager>
     public TextMeshProUGUI goldCountText;
 
     public int factoryTier;
-
+    private bool goldReached;
 
     //lists of in-scene Fabricators and Conveyors
     public List<GameObject> Fabricators;
@@ -36,15 +41,16 @@ public class GameManager : Singleton<GameManager>
     private float loadTime;
 
     //current cash variable
-    public float goldCount;
-    public float scrapCount;
+    public float goldCount = 0;
+    public float goldTemp = 0;
+    public float scrapCount = 50;
 
     //variables for cost of items
-    private float robotCost;
+    private float robotCost = 10f;
 
     //variables for scrap upgrades
-    public float scrapCap;
-    public float scrapRecharge;
+    public float scrapCap = 100f;
+    public float scrapRecharge = 5f;
 
 
 
@@ -61,12 +67,17 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        factoryUpgradeButton = GameObject.FindGameObjectWithTag("FactoryButton");
+        goldReached = false;
+        IsDestroyedOnLoad = true;
+        factoryTier = 1;
         curConveyorTier = 0;
+        factoryUpgradeButton.gameObject.SetActive(false);
+
         touchControls = new PlayerInput();
         touchControls.Enable();
         speeds = new List<float>();
         StartValues();
-
         if (PlayerPrefs.HasKey("SaveCheck"))
         {
             LoadData();
@@ -74,11 +85,9 @@ public class GameManager : Singleton<GameManager>
 
         StartCoroutine(IncrementScrap());
         StartCoroutine(StartUIUpdate());
+        StartCoroutine(GoldCheck());
         GetConveyors();
         GetFabricators();
-
-
-        robotValue = 0;
         
     }
 
@@ -95,10 +104,26 @@ public class GameManager : Singleton<GameManager>
 
 
 
+    IEnumerator GoldCheck()
+    {
+        while (!goldReached)
+        {
+            yield return new WaitForSeconds(10f);
+            if(goldCount > goldRequiredForFactory)
+            {
+                goldReached = true;
+                factoryUpgradeButton.gameObject.SetActive(true);
+            }
+        }
+       
+    }
+
+
+
     private void UpdateUI()
     {
         scrapCountText.text = "Scrap: " + (int)scrapCount;
-        var goldTemp = (int)goldCount;
+        goldTemp = (int)goldCount;
         goldCountText.text = goldTemp.ToString();
     }
 
@@ -118,15 +143,32 @@ public class GameManager : Singleton<GameManager>
     }
 
 
+    public void UpgradeFactory()
+    {
+        factoryTier++;
+        StartValues();
+        SaveData();
+        StartCoroutine(SwapScene());
+    }
+    
+
+    IEnumerator SwapScene()
+    {
+        yield return new WaitForEndOfFrame();
+        SceneManager.LoadScene(factoryTier);
+
+
+    }
 
     private void StartValues()
     {
-        factoryTier = 1;
         goldCount = 0f;
+        goldTemp = 0f;
         robotCost = 10f;
         scrapCap = 100f;
         scrapCount = 50f;
         scrapRecharge = 5F;
+        goldReached = false;
 
         foreach (GameObject conveyor in GameManager.instance.Conveyors)
         {
@@ -242,6 +284,7 @@ public class GameManager : Singleton<GameManager>
 
         //SceneManager.LoadScene(factoryTier);
     }
+
 
 
     private void SaveData()

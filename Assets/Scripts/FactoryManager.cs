@@ -8,7 +8,12 @@ public class FactoryManager : Singleton<FactoryManager>
     
     void Start()
     {
+        IsDestroyedOnLoad = false;
         StartCoroutine(GetFactory());
+        if(GameManager.instance.factoryTier < 1)
+        {
+            GameManager.instance.factoryTier = 1;
+        }
     }
 
 
@@ -21,6 +26,7 @@ public class FactoryManager : Singleton<FactoryManager>
 
     private IEnumerator GetFactory()
     {
+        yield return new WaitForSeconds(0.2f);
         int sceneToLoad = GameManager.instance.factoryTier;
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(sceneToLoad);

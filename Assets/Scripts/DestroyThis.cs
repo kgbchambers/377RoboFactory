@@ -18,7 +18,8 @@ public class DestroyThis : MonoBehaviour
         yield return new WaitForSeconds(20f);
 		if (robo != null)
 		{
-            Instantiate(pe, robo.transform.position + yOffset , Quaternion.identity);
+            if(pe != null)
+                Instantiate(pe, robo.transform.position + yOffset , Quaternion.identity);
             Destroy(robo);
 		}
 	}
