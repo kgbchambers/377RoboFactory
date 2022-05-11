@@ -24,6 +24,7 @@ public class GameManager : Singleton<GameManager>
     public TextMeshProUGUI goldCountText;
 
     public int factoryTier;
+
     private bool goldReached;
 
     //lists of in-scene Fabricators and Conveyors
@@ -68,7 +69,9 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        
         factoryTier = 1;
+
         factoryUpgradeButton = GameObject.FindGameObjectWithTag("FactoryButton");
         goldReached = false;
         IsDestroyedOnLoad = true;
@@ -157,7 +160,13 @@ public class GameManager : Singleton<GameManager>
     public void UpgradeFactory()
     {
         factoryTier++;
-        StartValues();
+        goldCount = 0f;
+        goldTemp = 0f;
+        robotCost = 10f;
+        scrapCap = 100f;
+        scrapCount = 50f;
+        scrapRecharge = 5F;
+        goldReached = false;
         SaveData();
         StartCoroutine(SwapScene());
     }
@@ -192,7 +201,7 @@ public class GameManager : Singleton<GameManager>
         robotValue = 25f;
         if (PlayerPrefs.HasKey("SaveCheck"))
         {
-            LoadData();
+            //LoadData();
         }
     }
 
@@ -219,18 +228,12 @@ public class GameManager : Singleton<GameManager>
 
     public void ApplyConveyorSpeeds()
     {
-        /*
+       
         foreach (GameObject conveyor in Conveyors)
         {
-            conveyor.GetComponent<Conveyor>().speed = speeds[curConveyorTier - 1];
+            conveyor.GetComponent<Conveyor>().speed = speeds[conveyorTier];
         }
-        */
-
-        foreach (GameObject conveyor in Conveyors)
-        {
-            conveyor.GetComponent<Conveyor>().speed = speeds[conveyorTier - 1];
-        }
-
+        
     }
 
 
@@ -298,10 +301,10 @@ public class GameManager : Singleton<GameManager>
         fabricatorSpeed = PlayerPrefs.GetFloat("fabricatorTier");
         robotValue = PlayerPrefs.GetFloat("robotValue");
         loadTime = Time.time;
-        float loadResources = loadTime - saveTime;
+       //float loadResources = loadTime - saveTime;
    
-        if (loadResources > 20f)
-            goldCount = (loadResources - 20f) * robotValue;
+       // if (loadResources > 20f)
+       //     goldCount = (loadResources - 20f) * robotValue;
 
     }
 

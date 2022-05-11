@@ -11,7 +11,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
     public List<float> tempSpeeds;
 
     private int conveyorTier;
-    private int robotTier;
+    private int robotValue;
     private int fabricatorTier;
     private int scrapRechargeTier;
     private int scrapCapTier;
@@ -29,7 +29,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
             PlayerPrefs.SetInt("scrapCapTier", scrapCapTier);
             PlayerPrefs.SetInt("conveyorTier", conveyorTier);
             PlayerPrefs.SetInt("fabricatorTier", fabricatorTier);
-            PlayerPrefs.SetInt("robotTier", robotTier);
+            PlayerPrefs.SetInt("robotValue", robotValue);
             PlayerPrefs.Save();
         }
         else
@@ -38,7 +38,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
             scrapCapTier = PlayerPrefs.GetInt("scrapCapTier");
             conveyorTier = PlayerPrefs.GetInt("conveyorTier");
             fabricatorTier = PlayerPrefs.GetInt("fabricatorTier");
-            robotTier = PlayerPrefs.GetInt("robotTier");
+            robotValue = PlayerPrefs.GetInt("robotValue");
         }
         tempSpeeds = new List<float>();
 
@@ -73,13 +73,6 @@ public class UpgradeManager : Singleton<UpgradeManager>
         GameManager.instance.curConveyorTier = GameManager.instance.conveyorTier;
         GameManager.instance.ApplyConveyorSpeeds();
 
-
-    }
-
-
-
-    public void RecalculateCost()
-    {
 
     }
 

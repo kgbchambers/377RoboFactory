@@ -5,15 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class FactoryManager : Singleton<FactoryManager>
 {
+    int factoryTier;
     
     void Start()
     {
-        IsDestroyedOnLoad = false;
-        StartCoroutine(GetFactory());
-        if(GameManager.instance.factoryTier < 1)
+        IsDestroyedOnLoad = true;
+        factoryTier = PlayerPrefs.GetInt("factoryTier");
+        if(factoryTier < 1 || factoryTier > 5)
         {
-            GameManager.instance.factoryTier = 1;
+            factoryTier = 1;
+            PlayerPrefs.SetInt("factoryTier", factoryTier);
         }
+        ChangeFactory();
     }
 
 
@@ -26,10 +29,8 @@ public class FactoryManager : Singleton<FactoryManager>
 
     private IEnumerator GetFactory()
     {
-        yield return new WaitForSeconds(0.2f);
-        int sceneToLoad = GameManager.instance.factoryTier;
         yield return new WaitForSeconds(0.1f);
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(factoryTier);
     }
 
 }

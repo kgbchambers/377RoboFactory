@@ -28,6 +28,7 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
         upgradeCount = 0;
         StartCoroutine(CreateInventory());
 
+
         if (!PlayerPrefs.HasKey("SaveCheck"))
         {
             PlayerPrefs.SetInt("SaveCheck", 1);
@@ -52,33 +53,6 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
 
 
 
-    /*
-    IEnumerator UpdateInventory(string upgradeToAdd)
-    {
-        yield return new WaitForEndOfFrame();
-        switch (upgradeToAdd)
-        {
-            case "conveyor":
-                GameObject instance = Instantiate(ButtonPref, ButtonContainer);
-                instance.name =.name;
-                break;
-            case "fabricator":
-
-                break;
-            case "scrapCap":
-
-                break;
-            case "scrapRecharge":
-
-                break;
-            case "robot":
-
-                break;
-        }
-        
-    }
-    */
-
     IEnumerator CreateInventory()
     {
         yield return new WaitForSeconds(0.5f);
@@ -89,6 +63,7 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
                 UpgradeItem upgradeItem = instance.GetComponent<UpgradeItem>();
                 upgradeItem.upgrade = upgrade;
                 upgradeItem.NameText.text = "" + upgrade.upgradeName;
+                upgradeItem.CostText.text = "" + upgrade.cost;
                 
 
                 if (upgradeItem.upgrade.makeModifierMultiplicative)
@@ -101,29 +76,37 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
                     modName = " scrap capacity";
                     instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeScrapCap(op, upgrade.modifier, upgrade.cost, instance); });
                 }
+
                 else if (upgradeItem.upgrade.isModifyingScrapRecharge)
                 {
                     modName = " scrap recharge";
                     instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeScrapRecharge(op, upgrade.modifier, upgrade.cost, instance); });
                 }
+                
                 else if (upgradeItem.upgrade.isModifyingConveyorSpeed)
                 {
                     modName = " conveyor speed";
-                    if (conveyorTier >= 0 && conveyorTier <= 9)
+                    if (conveyorTier >= 0 && conveyorTier < 9)
                         upgradeItem.CostText.text = "" + (upgrade.cost * conveyorTier);
                     upgradeItem.upgrade.modifier = 1f;
                     instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeConveyorSpeed(op, upgrade.modifier, upgrade.cost * conveyorTier, instance); });
 
                 }
+
                 else if (upgradeItem.upgrade.isModifyingFabricatorSpeed)
                 {
                     modName = " fabricator speed";
                     instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeFabricatorSpeed(op, upgrade.modifier, upgrade.cost, instance); });
                 }
+
                 else if (upgradeItem.upgrade.isModifyingRobotValue)
                 {
                     modName = " Robots value";
                     instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeRobotValue(op, upgrade.modifier, upgrade.cost, instance); });
+                }
+                else
+                {
+                    Debug.Log("Oh no!");
                 }
 
                 upgradeItem.ModifierText.text = op + upgradeItem.upgrade.modifier + modName;
