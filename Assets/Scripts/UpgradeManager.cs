@@ -66,6 +66,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
         yield return new WaitForSeconds(0.5f);
         GameManager.instance.speeds = tempSpeeds;
         GameManager.instance.curConveyorTier = GameManager.instance.conveyorTier;
+        fabricatorTier = GameManager.instance.conveyorTier;
         GameManager.instance.ApplyConveyorSpeeds();
 
 
@@ -137,8 +138,8 @@ public class UpgradeManager : Singleton<UpgradeManager>
                 Debug.Log("Conveyor uh oh");
             }
 
-            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
-            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeConveyorSpeed(op, mod * 2, cost * 2, buttonToDoom); });
+            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = (cost * 2).ToString();
+            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeConveyorSpeed(op, mod, cost * 2, buttonToDoom); });
 
         }
     }
@@ -149,22 +150,28 @@ public class UpgradeManager : Singleton<UpgradeManager>
     {
         if (GameManager.instance.spendCash(cost))
         {
+            GameManager.instance.UpgradeFabs();
+
             if (op == "x ")
             {
                 foreach (GameObject fabricator in GameManager.instance.Fabricators)
                 {
-                    fabricator.GetComponent<Fabricator>().speed *= mod;
+                    fabricator.GetComponent<Fabricator>().speed -= mod;
                 }
             }
             else if (op == "+ ")
             {
                 foreach (GameObject fabricator in GameManager.instance.Fabricators)
                 {
-                    fabricator.GetComponent<Fabricator>().speed += mod;
+                    fabricator.GetComponent<Fabricator>().speed -= mod;
                 }
             }
-            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
-            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeFabricatorSpeed(op, mod * 2, cost * 2, buttonToDoom); });
+            else
+            {
+
+            }
+            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = (cost * 2).ToString();
+            buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeFabricatorSpeed(op, mod, cost * 2, buttonToDoom); });
 
         }
     }

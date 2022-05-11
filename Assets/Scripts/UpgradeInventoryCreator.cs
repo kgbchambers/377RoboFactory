@@ -17,12 +17,17 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
     private string modName;
 
     private int conveyorTier;
+    private int fabricatorTier;
    
+
 
     private void Start()
     {
         IsDestroyedOnLoad = true;
         upgradeCount = 0;
+
+        conveyorTier = PlayerPrefs.GetInt("conveyorTier");
+        fabricatorTier = PlayerPrefs.GetInt("fabricatorTier");
         StartCoroutine(CreateInventory());  
     }
 
@@ -37,8 +42,8 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
                 instance.name = upgrade.name;
                 UpgradeItem upgradeItem = instance.GetComponent<UpgradeItem>();
                 upgradeItem.upgrade = upgrade;
-                upgradeItem.NameText.text = "" + upgrade.upgradeName;
-                upgradeItem.CostText.text = "" + upgrade.cost;
+                upgradeItem.NameText.text = upgrade.upgradeName.ToString();
+                upgradeItem.CostText.text = upgrade.cost.ToString();
                 
 
                 if (upgradeItem.upgrade.makeModifierMultiplicative)
@@ -61,17 +66,19 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
                 else if (upgradeItem.upgrade.isModifyingConveyorSpeed)
                 {
                     modName = " conveyor speed";
-                    if (conveyorTier > 0 && conveyorTier < 9)
-                        upgradeItem.CostText.text = "" + (upgrade.cost * conveyorTier);
+                    if (conveyorTier >= 0 && conveyorTier <= 8)
+                        upgradeItem.CostText.text = (upgrade.cost * (conveyorTier + 1)).ToString();
                     upgradeItem.upgrade.modifier = 1f;
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeConveyorSpeed(op, upgrade.modifier, upgrade.cost * conveyorTier, instance); });
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeConveyorSpeed(op, upgrade.modifier, upgrade.cost * (conveyorTier + 1), instance); });
 
                 }
 
                 else if (upgradeItem.upgrade.isModifyingFabricatorSpeed)
                 {
                     modName = " fabricator speed";
-                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeFabricatorSpeed(op, upgrade.modifier, upgrade.cost, instance); });
+                    if (fabricatorTier >= 0 && fabricatorTier <= 8)
+                        upgradeItem.CostText.text = (upgrade.cost * (fabricatorTier + 1)).ToString();
+                    instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeFabricatorSpeed(op, upgrade.modifier, upgrade.cost * (fabricatorTier + 1), instance); });
                 }
 
                 else if (upgradeItem.upgrade.isModifyingRobotValue)

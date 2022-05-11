@@ -61,7 +61,7 @@ public class GameManager : Singleton<GameManager>
     public float truckSpeed;
 
     //variables for fabricator upgrades
-    public float fabricatorSpeed;
+    public int fabricatorTier;
 
     //variables for robot value upgrades
     public float robotValue;
@@ -196,7 +196,7 @@ public class GameManager : Singleton<GameManager>
 
         truckCap = 6f;
         truckSpeed = 1f;
-        fabricatorSpeed = 1f;
+        fabricatorTier = 0;
         robotValue = 25f;
     }
 
@@ -229,6 +229,13 @@ public class GameManager : Singleton<GameManager>
             conveyor.GetComponent<Conveyor>().speed = speeds[conveyorTier];
         }
         
+    }
+
+
+    public void UpgradeFabs()
+    {
+        if(fabricatorTier >= 0 && fabricatorTier < 9)
+            fabricatorTier++;
     }
 
 
@@ -293,7 +300,7 @@ public class GameManager : Singleton<GameManager>
         goldCount = PlayerPrefs.GetFloat("goldCount");
         saveTime = PlayerPrefs.GetFloat("saveTime");
         conveyorTier = PlayerPrefs.GetInt("conveyorTier");
-        fabricatorSpeed = PlayerPrefs.GetFloat("fabricatorTier");
+        fabricatorTier = PlayerPrefs.GetInt("fabricatorTier");
         robotValue = PlayerPrefs.GetFloat("robotValue");
         loadTime = Time.time;
        //float loadResources = loadTime - saveTime;
@@ -315,7 +322,7 @@ public class GameManager : Singleton<GameManager>
         PlayerPrefs.SetFloat("saveTime", saveTime);
         PlayerPrefs.SetInt("factoryTier", factoryTier);
         PlayerPrefs.SetInt("conveyorTier", conveyorTier);
-        PlayerPrefs.SetFloat("fabricatorTier", fabricatorSpeed);
+        PlayerPrefs.SetInt("fabricatorTier", fabricatorTier);
         PlayerPrefs.SetFloat("robotValue", robotValue);
         PlayerPrefs.Save();
     }

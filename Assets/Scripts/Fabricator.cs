@@ -32,6 +32,7 @@ public class Fabricator : MonoBehaviour
         spawnLocation = transform.Find("RobotSpawner");
         spawnPower = 2f;
         speed = 2f;
+
         StartCoroutine(FabricatorQueue());
     }
 
@@ -99,6 +100,7 @@ public class Fabricator : MonoBehaviour
             if(_robotCounter > 0)
             {
                 yield return new WaitForSeconds(speed);
+
                 switch (processNumber)
                 {
                     case 2:
