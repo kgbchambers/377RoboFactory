@@ -15,6 +15,7 @@ public class FactoryManager : Singleton<FactoryManager>
         {
             factoryTier = 1;
             PlayerPrefs.SetInt("factoryTier", factoryTier);
+            PlayerPrefs.Save();
         }
         ChangeFactory();
     }

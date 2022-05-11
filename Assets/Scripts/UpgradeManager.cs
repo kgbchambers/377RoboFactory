@@ -13,8 +13,8 @@ public class UpgradeManager : Singleton<UpgradeManager>
     private int conveyorTier;
     private int robotValue;
     private int fabricatorTier;
-    private int scrapRechargeTier;
-    private int scrapCapTier;
+    private int scrapRecharge;
+    private int scrapCap;
 
 
 
@@ -24,18 +24,13 @@ public class UpgradeManager : Singleton<UpgradeManager>
         IsDestroyedOnLoad = true;
         if (!PlayerPrefs.HasKey("SaveCheck"))
         {
-            PlayerPrefs.SetInt("SaveCheck", 1);
-            PlayerPrefs.SetInt("scrapRechargeTier", scrapRechargeTier);
-            PlayerPrefs.SetInt("scrapCapTier", scrapCapTier);
-            PlayerPrefs.SetInt("conveyorTier", conveyorTier);
-            PlayerPrefs.SetInt("fabricatorTier", fabricatorTier);
-            PlayerPrefs.SetInt("robotValue", robotValue);
+            GameManager.instance.StartValues();
             PlayerPrefs.Save();
         }
         else
         {
-            scrapRechargeTier = PlayerPrefs.GetInt("scrapRechargeTier");
-            scrapCapTier = PlayerPrefs.GetInt("scrapCapTier");
+            scrapRecharge = PlayerPrefs.GetInt("scrapRecharge");
+            scrapCap = PlayerPrefs.GetInt("scrapCap");
             conveyorTier = PlayerPrefs.GetInt("conveyorTier");
             fabricatorTier = PlayerPrefs.GetInt("fabricatorTier");
             robotValue = PlayerPrefs.GetInt("robotValue");
@@ -115,7 +110,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
             {
                 GameManager.instance.scrapRecharge += mod;
             }
-            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
+            buttonToDoom.GetComponent<UpgradeItem>().CostText.text = (cost * 2).ToString();
             buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeScrapRecharge(op, mod * 2, cost * 2, buttonToDoom); });
 
         }
@@ -137,6 +132,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
                 GameManager.instance.UpgradeConveyor();
                
             }
+            else
+            {
+                Debug.Log("Conveyor uh oh");
+            }
+
             buttonToDoom.GetComponent<UpgradeItem>().CostText.text = "" + cost * 2;
             buttonToDoom.GetComponent<Button>().onClick.AddListener(delegate () { instance.UpgradeConveyorSpeed(op, mod * 2, cost * 2, buttonToDoom); });
 

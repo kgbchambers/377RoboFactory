@@ -120,7 +120,7 @@ public class GameManager : Singleton<GameManager>
                 goldReached = true;
                 factoryUpgradeButton.gameObject.SetActive(true);
             }
-        if(goldCount == 0)
+        if(goldCount == 0 && scrapCount == 0)
             {
                 if (PlayerPrefs.HasKey("SaveCheck"))
                 {
@@ -178,7 +178,7 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene(factoryTier);
     }
 
-    private void StartValues()
+    public void StartValues()
     {
         goldCount = 0f;
         goldTemp = 0f;
@@ -187,6 +187,7 @@ public class GameManager : Singleton<GameManager>
         scrapCount = 50f;
         scrapRecharge = 5F;
         goldReached = false;
+        conveyorTier = 0;
 
         foreach (GameObject conveyor in GameManager.instance.Conveyors)
         {
@@ -195,14 +196,8 @@ public class GameManager : Singleton<GameManager>
 
         truckCap = 6f;
         truckSpeed = 1f;
-
         fabricatorSpeed = 1f;
-
         robotValue = 25f;
-        if (PlayerPrefs.HasKey("SaveCheck"))
-        {
-            //LoadData();
-        }
     }
 
 
@@ -239,7 +234,7 @@ public class GameManager : Singleton<GameManager>
 
     public void UpgradeConveyor()
     {
-        if(conveyorTier < speeds.Count)
+        if(conveyorTier < speeds.Count - 1)
         {
             conveyorTier++;
             curConveyorTier = conveyorTier;
@@ -293,8 +288,8 @@ public class GameManager : Singleton<GameManager>
     {
         factoryTier = PlayerPrefs.GetInt("factoryTier");
 
-        scrapCap = PlayerPrefs.GetFloat("scrapCapTier");
-        scrapRecharge = PlayerPrefs.GetFloat("scrapRechargeTier");
+        scrapCap = PlayerPrefs.GetFloat("scrapCap");
+        scrapRecharge = PlayerPrefs.GetFloat("scrapRecharge");
         goldCount = PlayerPrefs.GetFloat("goldCount");
         saveTime = PlayerPrefs.GetFloat("saveTime");
         conveyorTier = PlayerPrefs.GetInt("conveyorTier");
@@ -314,8 +309,8 @@ public class GameManager : Singleton<GameManager>
     {
    
         PlayerPrefs.SetInt("SaveCheck", 1);
-        PlayerPrefs.SetFloat("scrapCapTier", scrapCap);
-        PlayerPrefs.SetFloat("scrapRechargeTier", scrapRecharge);
+        PlayerPrefs.SetFloat("scrapCap", scrapCap);
+        PlayerPrefs.SetFloat("scrapRecharge", scrapRecharge);
         PlayerPrefs.SetFloat("goldCount", goldCount);
         PlayerPrefs.SetFloat("saveTime", saveTime);
         PlayerPrefs.SetInt("factoryTier", factoryTier);

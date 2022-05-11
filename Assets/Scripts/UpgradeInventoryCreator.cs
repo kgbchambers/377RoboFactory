@@ -17,38 +17,13 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
     private string modName;
 
     private int conveyorTier;
-    private int robotValue;
-    private int fabricatorTier;
-    private int scrapRechargeTier;
-    private int scrapCapTier;
+   
 
     private void Start()
     {
         IsDestroyedOnLoad = true;
         upgradeCount = 0;
-        StartCoroutine(CreateInventory());
-
-
-        if (!PlayerPrefs.HasKey("SaveCheck"))
-        {
-            PlayerPrefs.SetInt("SaveCheck", 1);
-            PlayerPrefs.SetInt("scrapRechargeTier", scrapRechargeTier);
-            PlayerPrefs.SetInt("scrapCapTier", scrapCapTier);
-            PlayerPrefs.SetInt("conveyorTier", conveyorTier);
-            PlayerPrefs.SetInt("fabricatorTier", fabricatorTier);
-            PlayerPrefs.SetInt("robotValue", robotValue);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            scrapRechargeTier = PlayerPrefs.GetInt("scrapRechargeTier");
-            scrapCapTier = PlayerPrefs.GetInt("scrapCapTier");
-            conveyorTier = PlayerPrefs.GetInt("conveyorTier");
-            fabricatorTier = PlayerPrefs.GetInt("fabricatorTier");
-            robotValue = PlayerPrefs.GetInt("robotValue");
-        }
-
-        
+        StartCoroutine(CreateInventory());  
     }
 
 
@@ -86,7 +61,7 @@ public class UpgradeInventoryCreator : Singleton<UpgradeInventoryCreator>
                 else if (upgradeItem.upgrade.isModifyingConveyorSpeed)
                 {
                     modName = " conveyor speed";
-                    if (conveyorTier >= 0 && conveyorTier < 9)
+                    if (conveyorTier > 0 && conveyorTier < 9)
                         upgradeItem.CostText.text = "" + (upgrade.cost * conveyorTier);
                     upgradeItem.upgrade.modifier = 1f;
                     instance.GetComponent<Button>().onClick.AddListener(delegate () { UpgradeManager.instance.UpgradeConveyorSpeed(op, upgrade.modifier, upgrade.cost * conveyorTier, instance); });
